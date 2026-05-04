@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coorg · Mysuru · Ooty — May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6F0;
+    --dark: #1A1208;
+    --coffee: #7C4E2A;
+    --forest: #3A5C35;
+    --amber: #C97830;
+    --gold: #D4A853;
+    --mist: #E8DFD0;
+    --red-flag: #C0392B;
+    --light-green: #EAF1E7;
+    --warm-grey: #8A7D6E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: var(--dark);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-brand {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar-brand .trip-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .sidebar-brand .trip-dates {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  .sidebar nav { padding: 16px 0; flex: 1; }
+
+  .sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    color: #fff;
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--amber);
+  }
+
+  .sidebar nav a .day-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gold);
+    min-width: 20px;
+    opacity: 0.8;
+  }
+
+  .sidebar nav a.active .day-num { opacity: 1; }
+
+  .sidebar nav .sep {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+    margin: 8px 20px;
+  }
+
+  .sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    margin-left: 220px;
+    flex: 1;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* COVER PAGE */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1A2E1A 0%, #2C1A0E 50%, #1A1208 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Coorg_Landscape.jpg/1280px-Coorg_Landscape.jpg') center/cover;
+    opacity: 0.18;
+  }
+
+  .cover-content { position: relative; z-index: 1; max-width: 600px; }
+
+  .cover-tag {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .cover-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-item span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .cover-circuit {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .circuit-stop {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+
+  .circuit-arrow { color: var(--amber); font-size: 12px; }
+
+  /* CHECKLIST PAGE */
+  .checklist-page { padding: 60px 60px 80px; }
+
+  /* DAY PAGES */
+  .day-page { }
+
+  .day-hero {
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .day-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+  }
+
+  .day-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,10,5,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  }
+
+  .day-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 36px 60px;
+    width: 100%;
+  }
+
+  .day-badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .day-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .day-hero h2 span {
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    font-size: 28px;
+  }
+
+  .day-body { padding: 44px 60px 80px; max-width: 860px; }
+
+  /* TLDR BOX */
+  .tldr {
+    background: var(--dark);
+    color: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tldr::before {
+    content: 'TL;DR';
+    position: absolute;
+    top: -8px; right: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: -2px;
+  }
+
+  .tldr h3 {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .tldr p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .tldr-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .tldr-pill {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .pill-drive { background: rgba(201,120,48,0.25); color: var(--amber); }
+  .pill-food { background: rgba(58,92,53,0.3); color: #8BC87F; }
+  .pill-stay { background: rgba(212,168,83,0.2); color: var(--gold); }
+  .pill-activity { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+
+  /* LOGISTICS STRIP */
+  .logistics {
+    display: flex;
+    gap: 0;
+    background: var(--mist);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .logistics-item {
+    flex: 1;
+    padding: 16px 20px;
+    border-right: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .logistics-item:last-child { border-right: none; }
+
+  .logistics-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-grey);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .logistics-item span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  /* STAY CARD */
+  .stay-card {
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #FFFBF4;
+  }
+
+  .stay-icon {
+    font-size: 28px;
+    margin-top: 2px;
+  }
+
+  .stay-info label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-grey);
+    font-weight: 600;
+  }
+
+  .stay-info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 4px 0 2px;
+  }
+
+  .stay-info p {
+    font-size: 13px;
+    color: var(--warm-grey);
+    line-height: 1.5;
+  }
+
+  .stay-info a {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    text-decoration: none;
+    border-bottom: 1px solid var(--coffee);
+    padding-bottom: 1px;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 54px;
+    top: 10px; bottom: 10px;
+    width: 1px;
+    background: var(--mist);
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 24px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .tl-time {
+    text-align: right;
+    padding-top: 14px;
+  }
+
+  .tl-time span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--warm-grey);
+    letter-spacing: 0.03em;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: 47px;
+    top: 18px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--mist);
+    z-index: 1;
+  }
+
+  .tl-dot.meal { border-color: var(--forest); background: var(--forest); }
+  .tl-dot.stay { border-color: var(--gold); background: var(--gold); }
+  .tl-dot.major { border-color: var(--coffee); background: var(--coffee); }
+  .tl-dot.drive { border-color: var(--amber); background: var(--mist); }
+
+  .tl-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #EDE6DA;
+    transition: box-shadow 0.2s;
+  }
+
+  .tl-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+  .tl-card.meal-card { border-left: 4px solid var(--forest); }
+  .tl-card.drive-card { border-left: 4px solid var(--amber); background: #FFFBF4; }
+  .tl-card.major-card { border-left: 4px solid var(--coffee); }
+  .tl-card.date-card { border-left: 4px solid #C0392B; background: #FFF9F9; }
+
+  .tl-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .tl-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .tl-card p {
+    font-size: 13px;
+    color: var(--warm-grey);
+    line-height: 1.65;
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--coffee);
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .map-btn:hover { background: var(--coffee); color: #fff; }
+
+  .meal-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+  }
+
+  .tag-breakfast { background: #FFF3E0; color: #E65100; }
+  .tag-lunch { background: #E8F5E9; color: #2E7D32; }
+  .tag-dinner { background: #EDE7F6; color: #4527A0; }
+  .tag-drive { background: #FFF8E1; color: #F57F17; }
+
+  /* FLAG ALERTS */
+  .flag {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .flag-red { background: #FDF2F0; border: 1px solid #F5C6C0; }
+  .flag-amber { background: #FFFBF0; border: 1px solid #F5E6C0; }
+  .flag-green { background: #F0F9F0; border: 1px solid #C0E0C0; }
+  .flag-blue { background: #F0F4FF; border: 1px solid #C0CDF5; }
+
+  .flag-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+  .flag-body label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .flag-red .flag-body label { color: var(--red-flag); }
+  .flag-amber .flag-body label { color: #B7770D; }
+  .flag-green .flag-body label { color: #2E7D32; }
+  .flag-blue .flag-body label { color: #1A4FA0; }
+
+  .flag-body p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .flag-body a {
+    color: var(--coffee);
+    font-weight: 600;
+  }
+
+  /* TATKAL SECTION */
+  .tatkal-section {
+    margin-top: 36px;
+    border: 2px dashed var(--amber);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .tatkal-header {
+    background: var(--amber);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tatkal-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .tatkal-header span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .tatkal-body {
+    background: #FFFBF4;
+    padding: 24px;
+  }
+
+  .tatkal-body p {
+    font-size: 13px;
+    color: var(--warm-grey);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* CHECKLIST STYLES */
+  .check-section { margin-bottom: 40px; }
+
+  .check-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--mist);
+  }
+
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #EDE6DA;
+    border-radius: 8px;
+  }
+
+  .check-item input[type="checkbox"] {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--coffee);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .check-item label {
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .check-item label strong { display: block; margin-bottom: 2px; }
+  .check-item label span { color: var(--warm-grey); font-size: 12px; }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 48px 60px 0;
+  }
+
+  .page-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+
+  .page-header p {
+    color: var(--warm-grey);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+
+  /* SECTION DIVIDER */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 20px;
+  }
+
+  .section-divider span {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--warm-grey);
+    white-space: nowrap;
+  }
+
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--mist);
+  }
+
+  /* IMAGE EMBED */
+  .location-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 14px 0 8px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+  }
+
+  .location-img:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+
+  .img-caption {
+    font-size: 11px;
+    color: var(--warm-grey);
+    font-style: italic;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    border-left: 2px solid var(--mist);
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--mist); border-radius: 10px; }
+
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+
+  /* PRINT */
+  @media print {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .page { display: block !important; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="trip-name">Coorg · Mysuru<br>Ooty Circuit</div>
+    <div class="trip-dates">May 20 – 27, 2026</div>
+  </div>
+  <nav>
+    <a href="#" onclick="show('cover')" class="active" id="nav-cover">
+      <span class="day-num">✦</span> Overview
+    </a>
+    <a href="#" onclick="show('checklist')" id="nav-checklist">
+      <span class="day-num">✓</span> Pre-Trip
+    </a>
+    <div class="sep"></div>
+    <a href="#" onclick="show('day1')" id="nav-day1">
+      <span class="day-num">1</span> Kannur → Coorg
+    </a>
+    <a href="#" onclick="show('day2')" id="nav-day2">
+      <span class="day-num">2</span> Coorg — Waterfalls
+    </a>
+    <a href="#" onclick="show('day3')" id="nav-day3">
+      <span class="day-num">3</span> Coorg — Elephants
+    </a>
+    <a href="#" onclick="show('day4')" id="nav-day4">
+      <span class="day-num">4</span> → Mysuru
+    </a>
+    <a href="#" onclick="show('day5')" id="nav-day5">
+      <span class="day-num">5</span> Mysuru Full Day
+    </a>
+    <a href="#" onclick="show('day6')" id="nav-day6">
+      <span class="day-num">6</span> → Ooty via Wild
+    </a>
+    <a href="#" onclick="show('day7')" id="nav-day7">
+      <span class="day-num">7</span> Ooty & Coonoor
+    </a>
+    <a href="#" onclick="show('day8')" id="nav-day8">
+      <span class="day-num">8</span> Fly Home
+    </a>
+  </nav>
+  <div class="sidebar-footer">EVM Wheels · Kannur → CJB</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ═══════════════ COVER ═══════════════ -->
+  <div id="cover" class="page active">
+    <div class="cover">
+      <div class="cover-content">
+        <div class="cover-tag">✦ Western Ghats Self-Drive Circuit · 2026</div>
+        <h1>The Green<br><em>Heartland</em></h1>
+        <div class="cover-subtitle">Coffee, Royalty & the Nilgiri Mist</div>
+        <div class="cover-circuit">
+          <span class="circuit-stop">Mumbai ✈</span>
+          <span class="circuit-arrow">›</span>
+          <span class="circuit-stop">Kannur</span>
+          <span class="circuit-arrow">›</span>
+          <span class="circuit-stop">Coorg</span>
+          <span class="circuit-arrow">›</span>
+          <span class="circuit-stop">Mysuru</span>
+          <span class="circuit-arrow">›</span>
+          <span class="circuit-stop">Ooty</span>
+          <span class="circuit-arrow">›</span>
+          <span class="circuit-stop">✈ Mumbai</span>
+        </div>
+        <div class="cover-meta" style="margin-top:40px;">
+          <div class="cover-meta-item"><label>Departure</label><span>20 May 2026</span></div>
+          <div class="cover-meta-item"><label>Return</label><span>27 May 2026</span></div>
+          <div class="cover-meta-item"><label>Duration</label><span>8 Days</span></div>
+          <div class="cover-meta-item"><label>Vehicle</label><span>EVM Wheels</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 56px 60px 60px; max-width: 860px;">
+      <div class="section-divider"><span>The Route</span></div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:300; line-height:1.8; color:#3A2E1E; margin-bottom:28px;">
+        A one-way self-drive arc from the Kerala coast through the coffee highlands of Kodagu, down into Mysuru's royal heritage, and up into the Nilgiri clouds — ending at Coimbatore airport.
+        EVM Wheels pickup at Kannur Airport. Drop at Coimbatore.
+      </p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:40px;">
+        <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
+          <div style="font-size:28px; margin-bottom:8px;">🌿</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Coorg (Madikeri)</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">3 nights · May 20–22<br>Coffee estates, elephants, Buddhist monastery</div>
+        </div>
+        <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
+          <div style="font-size:28px; margin-bottom:8px;">🏛️</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Mysuru</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">2 nights · May 23–24<br>Palace, Chamundi Hills, Brindavan Gardens</div>
+        </div>
+        <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
+          <div style="font-size:28px; margin-bottom:8px;">🌄</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Ooty & Coonoor</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">2 nights · May 25–26<br>Nilgiri peaks, tea estates, toy train</div>
+        </div>
+      </div>
+
+      <div class="flag flag-amber">
+        <div class="flag-icon">⚠️</div>
+        <div class="flag-body">
+          <label>May is Peak Season</label>
+          <p>Expect crowds at major sites, especially weekends. Ooty E-Pass required for private vehicles entering Nilgiris district. Dubare Elephant Camp morning slots sell out. Book <strong>everything</strong> before departure.</p>
+        </div>
+      </div>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Coorg_India.JPG/1280px-Coorg_India.JPG" class="location-img" style="height:260px; margin-top:28px;" alt="Coorg" onerror="this.style.background='linear-gradient(135deg,#3A5C35,#1A2E1A)'; this.removeAttribute('src')">
+      <p class="img-caption">The Kodagu (Coorg) highlands — coffee, pepper and cardamom country at 1000m+</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PRE-TRIP CHECKLIST ═══════════════ -->
+  <div id="checklist" class="page">
+    <div class="page-header">
+      <h2>Pre-Trip Checklist</h2>
+      <p>Everything to book before May 20. Tick as you go.</p>
+    </div>
+    <div style="padding: 0 60px 80px;">
+
+      <div class="check-section">
+        <h3>✈ Flights</h3>
+        <div class="check-grid">
+          <div class="check-item">
+            <input type="checkbox" id="c1">
+            <label for="c1"><strong>Mumbai → Kannur (CNN) · May 20</strong><span>IndiGo or Air India Express. Book 7–9 AM departure. ~₹2,500–4,500. Direct flight, ~1.5 hrs.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c2">
+            <label for="c2"><strong>Coimbatore (CJB) → Mumbai · May 27</strong><span>Book 3 PM or later departure for comfortable buffer. IndiGo/Air India. ~₹3,000–5,000.</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-section">
+        <h3>🚗 Car Rental</h3>
+        <div class="flag flag-red">
+          <div class="flag-icon">🚨</div>
+          <div class="flag-body">
+            <label>Critical — Confirm One-Way Drop Fee</label>
+            <p><strong>EVM Wheels:</strong> Pickup at Kannur Airport · Drop at Coimbatore Airport.<br>
+            Call: <strong>+91 790 281 0000</strong> · Website: <a href="https://evmwheels.com">evmwheels.com</a><br>
+            Confirm one-way drop charges in writing before paying. Clarify fuel policy, insurance coverage, and 24/7 breakdown support number.</p>
+          </div>
+        </div>
+        <div class="check-grid">
+          <div class="check-item">
+            <input type="checkbox" id="c3">
+            <label for="c3"><strong>Book EVM Wheels Car</strong><span>Pickup: Kannur Airport (CNN). Drop: Coimbatore (CJB). Confirm dates May 20–27.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c4">
+            <label for="c4"><strong>Documents to Carry</strong><span>Driving licence (original), Vehicle RC, Pollution certificate, Insurance certificate, Aadhaar/Passport.</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-section">
+        <h3>🏨 Accommodations</h3>
+        <div class="check-grid">
+          <div class="check-item">
+            <input type="checkbox" id="c5">
+            <label for="c5"><strong>Coorg — Amanvana Spa Resort</strong><span>3 nights (May 20–22). Kushalnagar, on the Kaveri. River-facing cottage. ~₹7,000–12,000/night. Book direct for best rate.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c6">
+            <label for="c6"><strong>Mysuru — Royal Orchid Metropole</strong><span>2 nights (May 23–24). Heritage 1920s property, centrally located. ~₹4,500–7,000/night.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c7">
+            <label for="c7"><strong>Ooty — Savoy Hotel (Taj)</strong><span>2 nights (May 25–26). Colonial 1829 bungalow property. Garden cottage. ~₹8,000–14,000/night.</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-section">
+        <h3>🎫 Activities & Permits</h3>
+        <div class="check-grid">
+          <div class="check-item">
+            <input type="checkbox" id="c8">
+            <label for="c8"><strong>Dubare Elephant Camp — BOOK NOW</strong><span>Morning slot 9–11 AM, May 22. <a href="https://www.dubareelephantcamp.com" target="_blank">dubareelephantcamp.com</a> or JLR. Fills weeks in advance.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c9">
+            <label for="c9"><strong>Nilgiri Toy Train (IRCTC)</strong><span>Ooty–Coonoor. Check daily at 8 AM for cancellations. IRCTC.co.in · Tatkal: May 25 at 8 AM for May 26 journey. UNESCO World Heritage.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c10">
+            <label for="c10"><strong>Ooty E-Pass (Nilgiris District)</strong><span>Apply May 23–24 at <a href="https://epass.tnega.org" target="_blank">epass.tnega.org</a>. Select "Nilgiris". Choose Masinagudi checkpoint. FREE. Carry ₹300 cash for Green Tax at checkpost.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c11">
+            <label for="c11"><strong>Evolve Back Coorg — Dinner Reservation</strong><span>May 21 (Day 2). Call ahead: <strong>+91 820 225 7900</strong>. Open-air plantation dining. Coorg Heritage menu. Request valley-view table.</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-section">
+        <h3>💰 Cash & Cards</h3>
+        <div class="check-grid">
+          <div class="check-item">
+            <input type="checkbox" id="c12">
+            <label for="c12"><strong>₹300–400 Cash for Green Tax</strong><span>At Ooty E-Pass checkpoint (Masinagudi). No UPI or card at most posts. Pay in cash.</span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c13">
+            <label for="c13"><strong>₹2,000 Small Denomination Cash</strong><span>For entry tickets across trip. Abbey Falls, Fort, Chamundi, etc — many don't take UPI.</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-section">
+        <h3>🌤 Weather Note</h3>
+        <p style="font-size:14px; color:#5A4E40; line-height:1.8; background:#fff; padding:18px 22px; border-radius:10px; border:1px solid #EDE6DA;">
+          <strong>Coorg (May 20–22):</strong> Pre-monsoon. Light showers, misty mornings — beautiful. Pack a waterproof jacket.<br>
+          <strong>Mysuru (May 23–24):</strong> Hot, 34–38°C. Midday rest planned. Outdoor activities in morning and evening.<br>
+          <strong>Ooty (May 25–26):</strong> 14–22°C. Peak tourist season. Carry a light fleece — summit temperatures drop sharply.<br>
+          <strong>Driving:</strong> Masinagudi hairpins may be slippery if wet. Drive slow on ghat roads.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 1 ═══════════════ -->
+  <div id="day1" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kannur_Beach_Kerala.jpg/1280px-Kannur_Beach_Kerala.jpg'); background-color: #2C4A1E;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 1 · Tuesday, May 20</div>
+        <h2>Mumbai → Kannur → Coorg <span>/ Arrival Day</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Fly Mumbai–Kannur, pick up EVM car, drive through Wayanad into Coorg. Arrive Madikeri by evening. First sight of rolling coffee country. Sunset at Raja's Seat. Dinner with authentic Kodava cuisine.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-drive">✈ Fly + 160 km Drive (~4.5 hrs)</span>
+          <span class="tldr-pill pill-stay">🏨 Amanvana Spa Resort, Coorg</span>
+          <span class="tldr-pill pill-activity">📍 Raja's Seat Sunset</span>
+          <span class="tldr-pill pill-food">🍴 Capitol Hotel — Pandi Curry</span>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Start</label><span>Kannur Airport</span></div>
+        <div class="logistics-item"><label>End</label><span>Madikeri, Coorg</span></div>
+        <div class="logistics-item"><label>Distance</label><span>~160 km</span></div>
+        <div class="logistics-item"><label>Drive Time</label><span>~4.5 hrs</span></div>
+        <div class="logistics-item"><label>Route</label><span>NH66 → NH766 → Virajpet</span></div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-icon">🏨</div>
+        <div class="stay-info">
+          <label>Tonight's Stay · 3 Nights</label>
+          <h4>Amanvana Spa Resort, Coorg</h4>
+          <p>River-facing cottages on the Kaveri river, lush estate surroundings, spa, outdoor pool. Best mid-luxury property in Coorg for a genuine coffee estate experience.</p>
+          <a href="https://maps.google.com/?q=Amanvana+Spa+Resort+Coorg" target="_blank">📍 View on Maps</a>
+        </div>
+      </div>
+
+      <div class="flag flag-red">
+        <div class="flag-icon">🚨</div>
+        <div class="flag-body">
+          <label>EVM Car Pickup — Allow 45 Minutes</label>
+          <p>EVM will meet you at/near Kannur Airport. Do the full walk-around inspection — photograph <strong>all sides</strong> before driving off. Confirm Coimbatore drop-off address. Get breakdown helpline number. Check fuel level.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Departure</span>
+            <div class="tl-card-header"><h4>Leave for Mumbai Airport</h4></div>
+            <p>Peak Mumbai traffic in May. Build in 30 min buffer. Light breakfast at airport or grab something at home.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <div class="tl-card-header"><h4>Mumbai Airport — Board Flight</h4></div>
+            <p>IndiGo or Air India Express to Kannur (CNN). Approximately 1.5 hrs. Small turboprop aircraft — not much of a view but short and comfortable. Grab coffee and something to eat here; next proper meal is 1 PM.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Land Kannur — EVM Pickup</h4>
+              <a href="https://maps.google.com/?q=12.1439,75.3803" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Clear baggage, meet EVM. Full car inspection with photos (front, back, sides, inside). Sort paperwork (~45 min). Get breakdown number. Confirm Coimbatore drop-off location in writing before leaving.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:15 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <div class="tl-card-header"><h4>Leave Kannur → NH66 South</h4></div>
+            <p>Head south on NH66 toward Thalassery. Coastal Kerala on your right. 20-min drive to the first stop.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:35 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Thalassery Fort — En Route Stop</h4>
+              <a href="https://maps.google.com/?q=11.7471,75.5336" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>16th century Portuguese fort on the Arabian Sea cliff. ₹5 entry. Walk the ramparts — 25 minutes. The coastline below is the same shoreline the Portuguese, Dutch and British fought over for the Malabar spice trade for 300 years. The lighthouse adjacent is operational. Skip if tired.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Thalasseri_Fort.jpg/1280px-Thalasseri_Fort.jpg" class="location-img" alt="Thalassery Fort" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Mananthavady, Wayanad — Kerala Meals</h4>
+              <a href="https://maps.google.com/?q=11.9217,75.7167" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Stop at any Kerala "meals" restaurant on the main road in Mananthavady. Red rice, fish curry, avial, pappadam — ₹150–200 per head. This is the last authentic Kerala food before Karnataka cuisine takes over. Don't skip.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:30 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — The Good Part Begins</span>
+            <div class="tl-card-header"><h4>Mananthavady → Kutta → Virajpet → Madikeri</h4></div>
+            <p>NH766 east. Around Kutta, the road begins climbing and the air changes. You'll smell pepper vines before you see them. Coffee and cardamom on both sides as you enter Kodagu district. Keep windows down.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Arrive Madikeri — Check In</h4>
+              <a href="https://maps.google.com/?q=Amanvana+Spa+Resort+Kushalnagar+Coorg" target="_blank" class="map-btn">📍 Resort</a>
+            </div>
+            <p>Amanvana is near Kushalnagar (~30 min from Madikeri town). Check in, freshen up, coffee from the estate. Allow 1 hour to settle in before heading out.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Raja's Seat — Sunset</h4>
+              <a href="https://maps.google.com/?q=12.4144,75.7369" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>₹20 entry. The pavilion where Kodagu kings watched the sun go down over their kingdom. Valley drops away below — three or four hill ranges stacked behind each other like stage scenery. The light turns from gold to pink to violet in 15 minutes. Arrive by 6:15 PM for position. This is your first full Coorg view.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Raja_Seat%2C_Madikeri.jpg/1280px-Raja_Seat%2C_Madikeri.jpg" class="location-img" alt="Raja's Seat" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Hotel Capitol, Madikeri — Kodava Cuisine</h4>
+              <a href="https://maps.google.com/?q=Hotel+Capitol+Madikeri+Coorg" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Order: <strong>Pandi Curry</strong> (Coorg pork slow-cooked in kachampuli vinegar — the Kodava signature dish), <strong>Kadambuttu</strong> (steamed rice balls), <strong>Noolputtu</strong> (rice noodles). Skip anything on the "Indian Chinese" section. Budget ₹400–600 for two.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:30 PM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <h4>Back to Resort — Early Night</h4>
+            <p>Day 2 starts at 7 AM. Abbey Falls is best before 9:30 AM. Set alarm.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 2 ═══════════════ -->
+  <div id="day2" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Namdroling_Monastery%2C_Bylakuppe.jpg/1280px-Namdroling_Monastery%2C_Bylakuppe.jpg'); background-color:#4A3A18;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 2 · Wednesday, May 21</div>
+        <h2>Waterfalls · Buddha · Coffee <span>/ Coorg Local</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Abbey Falls at golden hour, then drive to the magnificent Namdroling Buddhist Monastery at Bylakuppe — the largest Tibetan temple complex outside Tibet. Afternoon coffee estate walk. Temple visit at sunset. Candlelit dinner at Evolve Back Coorg's plantation dining room.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-activity">🌊 Abbey Falls</span>
+          <span class="tldr-pill pill-activity">🏯 Namdroling Golden Temple</span>
+          <span class="tldr-pill pill-food">🍵 Tibetan Momos for Lunch</span>
+          <span class="tldr-pill pill-food">🌿 Coffee Estate Walk</span>
+          <span class="tldr-pill pill-stay">🍽 Evolve Back Dinner</span>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Total Drive</label><span>~100 km</span></div>
+        <div class="logistics-item"><label>Stay</label><span>Amanvana, Coorg (Night 2)</span></div>
+        <div class="logistics-item"><label>Key Distance</label><span>Madikeri–Bylakuppe: 45 km</span></div>
+        <div class="logistics-item"><label>Note</label><span>Local day, no major highways</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:45 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Wake Up — Step Outside First</h4>
+            <p>Coorg mornings at 6:45 AM deserve 10 minutes of doing nothing. Mist fills the valley below the estate, birds you've never heard in Mumbai. Coffee blossoms in April–May smell like jasmine. Don't rush past this.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:15 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <h4>Homestay / Resort Breakfast</h4>
+            <p>Idli, chutney, filter coffee from estate-grown beans. The coffee here is from the property's own Arabica plants — different from anything you get in Mumbai. Eat fully; next meal is Tibetan food at 1 PM.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Head to Abbey Falls — 9 km from Madikeri</h4>
+            <p>25 min drive. Arrive by 9 AM — before the tour buses.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Abbey (Abbi) Falls</h4>
+              <a href="https://maps.google.com/?q=12.4579,75.7165" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>₹10 entry. 5-minute trail through a canopy of coffee and pepper vines — you smell the pepper before you see it. The falls drop 70 feet and in May have strong pre-monsoon flow. A hanging bridge is positioned for the best view angle. The mist from the falls reaches you at 15 metres. 45 minutes here.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Abbey_Falls%2C_Coorg.jpg/1280px-Abbey_Falls%2C_Coorg.jpg" class="location-img" alt="Abbey Falls" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>10:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — 45 km via Kushalnagar</span>
+            <h4>Madikeri → Bylakuppe (1 hour)</h4>
+            <p>Head east via Kushalnagar. You'll cross a bridge over the Kaveri — the river you'll trace all the way to its source tomorrow. Bylakuppe appears suddenly out of Karnataka farmland: red-robed monks on motorcycles, prayer flags, Tibetan script on walls.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Namdroling Monastery — Golden Temple, Bylakuppe</h4>
+              <a href="https://maps.google.com/?q=12.4306,75.9670" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Park outside. Remove footwear at the gate. This is the largest Nyingma Buddhist settlement outside Tibet — 5,000+ Tibetan refugees settled here since the 1960s. Enter the <strong>Zangdog Palri Fo-Brang temple</strong> first: three golden Buddhas (the central one at 18 feet), 1,000 smaller figures, ceiling murals that took 10 years to complete.</p>
+            <p style="margin-top:8px;">Find a corner and sit quietly for 10 minutes. Monks do puja rounds throughout the day. Walk the <strong>mani prayer wheel corridor</strong> — spin each wheel clockwise with your right hand. The Tibetan Vajrayana tradition here absorbed significant Hindu tantric elements — the fierce protective deities at the entrance are identical in concept to the Durga forms in Hindu temples. This overlap is worth spending time with. <strong>Spend 1.5–2 hours here, not 30 minutes.</strong></p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Namdroling_Monastery%2C_Bylakuppe.jpg/1280px-Namdroling_Monastery%2C_Bylakuppe.jpg" class="location-img" alt="Namdroling Monastery" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Tibetan Restaurants — Outside Monastery</h4>
+              <a href="https://maps.google.com/?q=Tibetan+restaurants+Namdroling+Bylakuppe" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Several Tibetan restaurants line the street just outside. Order: <strong>Thupka</strong> (noodle broth — Tibet's version of ramen), <strong>Steamed momos</strong> (not fried), <strong>Butter tea</strong> if curious (salty, acquired taste). Honest food, under ₹200 a head.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:30 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive Back</span>
+            <h4>Bylakuppe → Resort (45 km, 1 hr)</h4>
+            <p>Stop at Kushalnagar for sugarcane juice if it's hot. The drive back through the coffee belt in the afternoon light is different from the morning.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <h4>Coffee Estate Walk — Resort Arranged</h4>
+            <p>Ask the resort to arrange a guided estate walk (usually complimentary or ₹200). A worker will walk you through the Arabica rows, show pepper vines climbing the silver oak trees, explain the processing: pulping, fermenting, drying, hulling. Ask what the cost difference is between estate-direct and retail — usually 3–4x. Buy a kg directly if they sell it.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:45 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Omkareshwara Temple, Madikeri</h4>
+              <a href="https://maps.google.com/?q=12.4227,75.7336" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Free entry. Easy 30-min visit. From outside it looks like a colonial bungalow. Inside: a 19th-century Shiva temple built by Coorg king Lingarajendra in 1820, with a Gothic tower from the British era and an Islamic dome — three architectural styles on one building. A small tank with turtles and fish in the courtyard. This architectural fusion tells Coorg's complex history in one building.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card date-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Evolve Back Coorg (Orange County) — Open Air Plantation Dining</h4>
+              <a href="https://maps.google.com/?q=Evolve+Back+Coorg+Orange+County+Resort" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>The finest dining experience in Coorg. Open-air pavilion dining by candlelight, set against the coffee plantation. <strong>Coorg Heritage Menu</strong> — Pandhi Curry, Koli Curry (Coorg chicken), Estate Fish, Akki Roti. Seasonal cocktails. Live Carnatic music on select nights. Request a valley-view table when booking. <strong>Reservation required: +91 820 225 7900.</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 3 ═══════════════ -->
+  <div id="day3" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Elephant_at_Dubare_2.jpg/1280px-Elephant_at_Dubare_2.jpg'); background-color:#1A3A2A;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 3 · Thursday, May 22</div>
+        <h2>Elephants · Kaveri Source · Ancient Fort <span>/ Coorg Deep</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Morning elephant camp on the Kaveri island (morning slot only — don't be late). Afternoon drive to Bhagamandala river confluence and Talacauvery — the sacred hilltop spring where the Kaveri originates. Evening at Madikeri Fort. Last night in Coorg.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-activity">🐘 Dubare Elephant Camp (Pre-Booked)</span>
+          <span class="tldr-pill pill-activity">🌊 Talacauvery — Kaveri Source</span>
+          <span class="tldr-pill pill-activity">🏯 Madikeri Fort</span>
+          <span class="tldr-pill pill-food">🍽 Karnataka Thali</span>
+        </div>
+      </div>
+
+      <div class="flag flag-red">
+        <div class="flag-icon">🚨</div>
+        <div class="flag-body">
+          <label>Dubare Booking Required — Morning Slot ONLY</label>
+          <p>Elephant camp operates 9–11 AM only. Must book in advance at <a href="https://www.dubareelephantcamp.com" target="_blank">dubareelephantcamp.com</a> or via JLR (Jungle Lodges & Resorts). Late arrival forfeits your slot. Leave resort by 7:00 AM sharp. Dubare is 60 km away.</p>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Drive Total</label><span>~140 km</span></div>
+        <div class="logistics-item"><label>Stay</label><span>Amanvana, Coorg (Night 3)</span></div>
+        <div class="logistics-item"><label>Note</label><span>Pack bags tonight — leaving for Mysuru tomorrow</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Early Start</span>
+            <h4>Wake Up, Quick Breakfast, Leave by 7 AM</h4>
+            <p>Light breakfast only — you'll be near water. Dubare is 60 km, 1.5 hrs. Leave by 7 AM to reach by 8:30 AM. Factor time for parking and river crossing.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:30 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Dubare Elephant Camp — Kaveri River</h4>
+              <a href="https://maps.google.com/?q=12.3705,75.9060" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Buy tickets at the Forest Department counter. Cross the Kaveri by wooden boat to the island camp. 20+ elephants of the Karnataka Forest Department stationed here — these are working elephants used in temple festivals and forest operations.</p>
+            <p style="margin-top:8px;">Morning session: mahouts begin the bathing ritual in the river. You can help scrub — the elephants lean into it like dogs. Feeding session with sugarcane balls follows. Some elephant-mahout pairs have been together 20+ years. Watch the body language between them. Full 2 hours here. ₹500–1,000 per person.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Elephant_at_Dubare_2.jpg/1280px-Elephant_at_Dubare_2.jpg" class="location-img" alt="Dubare Elephants" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — 50 km via Virajpet</span>
+            <h4>Dubare → Bhagamandala (~1.5 hrs)</h4>
+            <p>Route via Virajpet and Napoklu. Road passes through core coffee country. Good overtaking stretches.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Bhagamandala — Local Karnataka Meals</h4>
+              <a href="https://maps.google.com/?q=12.3806,75.8953" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Small town, roadside Karnataka meals. Nothing fancy. Sambar, rice, two vegetables, papad — ₹120 per head. Eat quickly before the afternoon visits.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Bhagamandala — Triveni Sangam</h4>
+              <a href="https://maps.google.com/?q=12.3806,75.8953" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Walk to the river confluence — Kaveri, Kannike, and the mythological underground Sujyothi meet here. Sacred bathing ghats, the Bhagandeshwara temple complex on the riverbank. Pilgrims come to immerse ashes. Quiet on a weekday. 30 minutes.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:45 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — 8 km uphill</span>
+            <h4>Bhagamandala → Talacauvery (20 min, steep switchbacks)</h4>
+            <p>Slow down on the switchbacks. Keep honking on blind corners — local protocol.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:15 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Talacauvery — Source of the Kaveri, 1276m</h4>
+              <a href="https://maps.google.com/?q=12.4194,75.8733" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>A small sacred kund (tank) marks the exact spring. The Kaveri flows 800 km from this quiet hilltop to the Bay of Bengal — feeding 80 million people, irrigating the delta rice bowl, powering the KRS Dam you'll see in Mysuru. Climb the 50 steps to the Brahmagiri viewpoint: 360° of the Coorg ranges. On a clear day, you can see the Western Ghats all the way to Kerala. Deeply underrated spot. 45 minutes.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Thalakkaveri_Temple%2C_Karnataka.jpg/1280px-Thalakkaveri_Temple%2C_Karnataka.jpg" class="location-img" alt="Talacauvery" onerror="this.style.display='none'">
+            <p class="img-caption">The sacred origin of the Kaveri river at Talacauvery</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:15 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Talacauvery → Madikeri (40 km, ~1 hr)</h4>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Madikeri Fort</h4>
+              <a href="https://maps.google.com/?q=12.4387,75.7421" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Free entry, closes 6 PM. Fort-palace hybrid — built in mud by Coorg kings in the 17th century, rebuilt in stone under Tipu Sultan, modified by the British. Bronze tiger's head cannons at the Elephants Gate (Tipu's trademark). Old prison, chapel, small museum. 45 minutes.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Madikeri Bazaar — Last Coorg Shopping</h4>
+            <p>Pick up: Coorg honey (buy from local shops, not tourist stalls), homemade plum or orange wine, pure pepper (whole black), cardamom, Coorg spices pack. Budget ₹500–1,000.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Hotel Coorg International — Farewell Coorg Dinner</h4>
+              <a href="https://maps.google.com/?q=Hotel+Coorg+International+Madikeri" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Pork ribs Coorg style, Neer Dosa with chicken curry, Kodava Payasam for dessert. Pack bags tonight after dinner — checkout tomorrow at 7:30 AM for Mysuru.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 4 ═══════════════ -->
+  <div id="day4" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mysore_Palace_Morning.jpg/1280px-Mysore_Palace_Morning.jpg'); background-color:#2A1A0A;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 4 · Friday, May 23</div>
+        <h2>Coorg → Mysuru <span>/ Palace & Temple Night</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Drive to Mysuru via Hunsur. Check in to the Royal Orchid Metropole (1920s heritage property). Legendary butter dosa lunch at Mylari. Devaraja Market in the afternoon. Mysuru Palace visit at golden hour. Chamundeshwari Temple at night — the illuminated temple from 1000m elevation.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-drive">🚗 120 km Drive (~3 hrs)</span>
+          <span class="tldr-pill pill-food">🍳 Butter Dosa — Mylari (Since 1950s)</span>
+          <span class="tldr-pill pill-activity">🏛 Mysuru Palace</span>
+          <span class="tldr-pill pill-activity">⛪ Chamundi Night Darshan</span>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Drive</label><span>120 km, ~3 hrs</span></div>
+        <div class="logistics-item"><label>Route</label><span>Coorg → Hunsur → NH275 → Mysuru</span></div>
+        <div class="logistics-item"><label>Stay</label><span>Royal Orchid Metropole (2 nights)</span></div>
+        <div class="logistics-item"><label>Temp</label><span>34–38°C in Mysuru</span></div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-icon">🏨</div>
+        <div class="stay-info">
+          <label>Tonight's Stay · 2 Nights</label>
+          <h4>Royal Orchid Metropole, Mysuru</h4>
+          <p>Heritage 1920s colonial property, one of the best-located hotels in Mysuru. Garden rooms, pool. A few minutes' walk from the Palace and Devaraja Market.</p>
+          <a href="https://maps.google.com/?q=Royal+Orchid+Metropole+Mysore" target="_blank">📍 View on Maps</a>
+        </div>
+      </div>
+
+      <div class="flag flag-amber">
+        <div class="flag-icon">⚠️</div>
+        <div class="flag-body">
+          <label>Chamundi Entry Ticket</label>
+          <p>Buy the ₹200 Special Entry ticket (avoids 45-minute free queue). Available at the ticket counter before the main gate. On Friday evenings, free queue can be 30–45 mins. Don't risk it.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Check Out</span>
+            <h4>Checkout Amanvana — Leave Coorg</h4>
+            <p>Route: NH275 via Kushalnagar → Hunsur → Mysuru. Good highway, smooth road. Coffee from resort for the road.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:30 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Optional: Nagarhole Viewpoint</h4>
+              <a href="https://maps.google.com/?q=11.9,76.0" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Near Hunsur, the road skirts Nagarhole National Park. Park at a roadside viewpoint for 15 min. Kabini river is visible — elephants sometimes spotted in early morning near the water. Not a full safari, just a quick look.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <h4>Arrive Mysuru — Check In</h4>
+            <p>Check in to Royal Orchid Metropole. Freshen up. The hotel is walking distance from the Palace and market — you won't need the car this afternoon.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch — Legendary</span>
+            <div class="tl-card-header">
+              <h4>Vinayaka Mylari, Nazarbad</h4>
+              <a href="https://maps.google.com/?q=Vinayaka+Mylari+Mysore+Nazarbad" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>A legend since the 1950s. One item on the menu: <strong>butter dosa and chutney</strong>. The dosa arrives crisp at edges, soft in the middle, floating in butter. Cash only. No choices to make. Closes when food runs out (usually 2 PM on Fridays). Go at 12:15 sharp.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Hotel Rest — Midday Break</h4>
+            <p>Mysuru at 2 PM in May is 36°C. Rest 1.5 hours. The palace visit starts at 4 PM in better light.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Devaraja Market</h4>
+              <a href="https://maps.google.com/?q=12.3024,76.6545" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Mysuru's oldest covered market, over 100 years old. Walk section by section: jasmine ropes sold by the metre, marigold mountains, Mysuru silk dupattas, sandalwood items, incense, spices. Buy <strong>agarbatti made of sandalwood paste</strong> — the Mysuru variety smells completely different from Mumbai brands. 45 minutes.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Pigments_at_Devaraja_Market_in_Mysore_%285992956369%29.jpg/1280px-Pigments_at_Devaraja_Market_in_Mysore_%285992956369%29.jpg" class="location-img" alt="Devaraja Market" onerror="this.style.display='none'">
+            <p class="img-caption">Colors and aromas of the historic Devaraja Market</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Mysuru Palace — Indo-Saracenic Masterpiece</h4>
+              <a href="https://maps.google.com/?q=12.3052,76.6552" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>₹150 entry. Audio guide ₹100 extra — worth it. Open 10 AM–5:30 PM. You have 1.5 hrs. Walk-through sequence: Doll's Pavilion (ivory figures, Tipu Sultan's sword), Kalyana Mantapa (12 Glasgow stained-glass sunflower domes, cast iron pillars from Kolkata, mosaic floor from Jaipur), Ambavilasa Hall (painted ceilings — 15 years of work), Durbar Hall (golden howdah 750 kg, ivory palanquin). <strong>No cameras inside main halls — serious enforcement.</strong></p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mysore_Palace_Morning.jpg/1280px-Mysore_Palace_Morning.jpg" class="location-img" alt="Mysuru Palace" onerror="this.style.display='none'">
+            <p class="img-caption">Mysuru Palace — 12 different architectural styles in one facade</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:45 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Palace Exterior — Golden Hour Photography</h4>
+            <p>The Indo-Saracenic facade in 5–6 PM light is extraordinary. Photograph from the far corner of the garden. On Sunday evenings the 97,000 bulbs light up — tonight is Friday so no illumination, but the golden hour is better for photos anyway.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:30 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Palace → Chamundi Hills (13 km, 30 min)</h4>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Chamundeshwari Temple — Night Darshan (7:30–9 PM)</h4>
+              <a href="https://maps.google.com/?q=12.2725,76.6707" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Buy ₹200 special entry ticket at counter before the main gate. The illuminated gopuram at night is visible from across Mysuru — up close it's even more dramatic. Chamundeshwari is the <em>kuldevi</em> (guardian deity) of the Mysore Wadiyar dynasty. She slew the buffalo demon Mahishasura on this hill — the city's name (Mahishasura's land → Mahisuru → Mysuru) comes from that myth.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Chamundeshwari_Temple%2C_Mysuru%2C_Karnataka%2C_India_Temple.jpg/1280px-Chamundeshwari_Temple%2C_Mysuru%2C_Karnataka%2C_India_Temple.jpg" class="location-img" alt="Chamundeshwari Temple" onerror="this.style.display='none'">
+            <p class="img-caption">The towering gopuram of Chamundeshwari Temple on the hill</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Hotel RRR, JSS Road</h4>
+              <a href="https://maps.google.com/?q=Hotel+RRR+Mysore+JSS+Road" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Andhra unlimited meals, banana leaf, loud, fast, fantastic. ₹180 per head. Or <strong>Depth N Green</strong> for something quieter if the day has been long.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 5 ═══════════════ -->
+  <div id="day5" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Brindavan_gardens_after_lighting.jpg/1280px-Brindavan_gardens_after_lighting.jpg'); background-color:#0E1A2E;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 5 · Saturday, May 24</div>
+        <h2>Mysuru Full Day <span>/ Hills · Zoo · Museum · Musical Gardens</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Chamundi Hills dawn darshan with panoramic city views. Nandi Bull on the descent. Mysuru Zoo — one of India's top three. Railway Museum with heritage steam locomotives. Evening drive to KRS Dam and Brindavan Gardens for the spectacular 45-minute musical fountain show under lights.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-activity">🌅 Chamundi Dawn Views</span>
+          <span class="tldr-pill pill-activity">🐯 Mysuru Zoo (157 acres)</span>
+          <span class="tldr-pill pill-activity">🚂 Railway Heritage Museum</span>
+          <span class="tldr-pill pill-activity">💦 Brindavan Musical Fountain</span>
+          <span class="tldr-pill pill-food">🍽 Dasaprakash Thali</span>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Stay</label><span>Royal Orchid Metropole (Night 5)</span></div>
+        <div class="logistics-item"><label>Evening Drive</label><span>19 km to KRS Dam</span></div>
+        <div class="logistics-item"><label>Temp</label><span>36–38°C midday (rest planned)</span></div>
+        <div class="logistics-item"><label>Note</label><span>Pack bags tonight — leaving for Ooty tomorrow 6:30 AM</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:45 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Hotel → Chamundi Hills (13 km, 25 min)</h4>
+            <p>Leave early — 7 AM at the temple. Breakfast after darshan.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:15 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Chamundeshwari Temple — Morning Darshan</h4>
+              <a href="https://maps.google.com/?q=12.2725,76.6707" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Opens 7:30 AM. ₹200 special entry. Morning puja is different — priest doing the first ritual of the day, bells echoing in the empty hall. After darshan, walk to the hilltop viewpoint: Mysuru city is spread below, the palace dome at the centre, KRS reservoir glinting to the northwest. On clear mornings, 30+ km visible.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:30 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Nandi Bull Statue — On Descent</h4>
+              <a href="https://maps.google.com/?q=12.2800,76.6750" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Halfway down the hill. Drive to it. 5-metre monolithic granite Nandi bull carved from a single rock, approximately 400 years old. One of South India's largest. 15-min stop.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:15 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <h4>Hotel or Mylari Again</h4>
+            <p>If you couldn't resist, Mylari opens around 7 AM. Otherwise hotel breakfast.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>10:00 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Gowri's Sand Museum</h4>
+              <a href="https://maps.google.com/?q=Gowri+Sand+Museum+Mysore" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>8:30–6:30 PM, ₹60. Hidden gem. 13,500 sq ft of sand sculptures — the Mysuru Dasara procession in miniature sand is the standout piece: the palace, elephants, royals, soldiers all in painstaking detail. Built by artist M.N. Gowri. Genuinely impressive. 45 min.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Mysuru Zoo — 157 Acres</h4>
+              <a href="https://maps.google.com/?q=12.3024,76.6638" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>8:30–5:30 PM, closed Tuesdays (Sat is fine). ₹120 entry + ₹240 battery vehicle (essential in May heat). Established 1892 — one of India's three best-managed zoos. Must-see enclosures: white tiger, African giraffe habitat, Komodo dragon, elephant yard. The oldest trees here are 130 years old. 2 hours.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Entrance_of_Mysore_Zoo.jpg/1280px-Entrance_of_Mysore_Zoo.jpg" class="location-img" alt="Mysuru Zoo" onerror="this.style.display='none'">
+            <p class="img-caption">Wildlife at the historic Sri Chamarajendra Zoological Gardens</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:15 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Hotel Dasaprakash, Gandhi Square</h4>
+              <a href="https://maps.google.com/?q=Hotel+Dasaprakash+Gandhi+Square+Mysore" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Classic Mysuru thali. Fixed menu, ₹180 per head. Sambar, rasam, four vegetables, rice, payasam. South Indian at its most archetypal. Clean, efficient, consistently excellent.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Hotel Afternoon Rest — 2:30–4 PM</h4>
+            <p>Mysuru at 3 PM in May is genuinely punishing. Strategic rest. Rehydrate. The Railway Museum in late afternoon is perfect.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:30 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Mysuru Railway Museum</h4>
+              <a href="https://maps.google.com/?q=Mysore+Railway+Museum" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>10–6 PM, closed Tuesdays. ₹30 entry. Outdoor campus with 30+ heritage locomotives — 100-year-old steam engines, the Mysore Maharaja's royal saloon carriage (velvet interior, gold fittings), narrow-gauge mountain wagons. The Toy Train inside the campus is genuinely fun. 1.5 hours.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rail_museum_mysore.JPG/1280px-Rail_museum_mysore.JPG" class="location-img" alt="Railway Museum" onerror="this.style.display='none'">
+            <p class="img-caption">Vintage locomotives at the Mysuru Railway Museum</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:15 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — 19 km, 35 min</span>
+            <h4>Mysuru → Brindavan Gardens / KRS Dam</h4>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Brindavan Gardens — Pre-Show Walk</h4>
+              <a href="https://maps.google.com/?q=12.4233,76.5745" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>₹100 entry + ₹50 buggy. Walk the North Garden — Italian-style terraced geometric flower beds. The KRS Dam wall is walkable (2.6 km long) — it irrigates the entire Cauvery delta region. The reservoir here is the KRS — water you first saw as a spring at Talacauvery in Coorg two days ago. Get position near the central fountain by 6:45 PM.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Musical Fountain Show (7:00–8:00 PM)</h4>
+              <a href="https://maps.google.com/?q=12.4233,76.5745" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Water jets choreographed to music, lit in rotating colour sequences, set against the dam backdrop. 45-minute show. The kind of experience that works for everyone regardless of taste. Don't stand at the back — the central position is far better.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Brindavan_gardens_after_lighting.jpg/1280px-Brindavan_gardens_after_lighting.jpg" class="location-img" alt="Brindavan Gardens" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Par Excellence, Vinoba Road, Mysuru</h4>
+              <a href="https://maps.google.com/?q=Par+Excellence+Mysore+Vinoba+Road" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>North Karnataka cuisine. Jowar roti, ennegayi (stuffed brinjal curry), lamb chops. Quieter than other Mysuru joints. <strong>Pack bags after dinner</strong> — leaving Mysuru at 6:30 AM tomorrow morning.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 6 ═══════════════ -->
+  <div id="day6" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Mudumalai_Wildlife_Sanctuary_view.jpg/1280px-Mudumalai_Wildlife_Sanctuary_view.jpg'); background-color:#1A2E14;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 6 · Sunday, May 25</div>
+        <h2>Mysuru → Ooty <span>/ Wildlife, Hairpins & Cloud Country</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>The most dramatic drive of the trip. Through Mudumalai Tiger Reserve (wild elephant corridor), Theppakadu working elephant camp, then the legendary 36-hairpin ascent into the Nilgiris. Temperature drops 12°C through the cloud layer at bend 15. Arrive Ooty by 2 PM. E-Pass checkpoint at Masinagudi — have QR code ready.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-drive">🚗 175 km · ~5.5 hrs incl stops</span>
+          <span class="tldr-pill pill-activity">🐘 Mudumalai Wildlife Drive</span>
+          <span class="tldr-pill pill-activity">⛰ 36 Hairpin Bends Ascent</span>
+          <span class="tldr-pill pill-activity">🏔 Doddabetta Peak 2637m</span>
+          <span class="tldr-pill pill-stay">🏨 Savoy Hotel (Taj), Ooty</span>
+        </div>
+      </div>
+
+      <div class="flag flag-red">
+        <div class="flag-icon">🚨</div>
+        <div class="flag-body">
+          <label>E-Pass Required — Apply Now (Before May 23)</label>
+          <p>Apply at <a href="https://epass.tnega.org" target="_blank">epass.tnega.org</a>. Choose "Nilgiris". Select <strong>Masinagudi entry checkpoint</strong>. FREE. Carry ₹300 cash for Green Tax at the physical checkpoint. Show QR code on phone — no printout needed.</p>
+        </div>
+      </div>
+
+      <div class="flag flag-amber">
+        <div class="flag-icon">⚠️</div>
+        <div class="flag-body">
+          <label>Leave by 6:30 AM Sharp — It's Sunday</label>
+          <p>Sunday traffic at Mudumalai and the hairpin section doubles travel time by 9 AM. Missing the 6:30 AM window means hitting the worst of it. Set two alarms.</p>
+        </div>
+      </div>
+
+      <div class="stay-card">
+        <div class="stay-icon">🏨</div>
+        <div class="stay-info">
+          <label>Tonight's Stay · 2 Nights</label>
+          <h4>Savoy Hotel, Ooty (Taj Property)</h4>
+          <p>Operating since 1829. Colonial bungalows spread across garden grounds. The oldest continuously operating hotel in Ooty. Garden cottage rooms, fireplace, butler service.</p>
+          <a href="https://maps.google.com/?q=Savoy+Hotel+Ooty+Taj" target="_blank">📍 View on Maps</a>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Route</label><span>Mysuru → Nanjangud → Gundlupet → Mudumalai → Masinagudi → Ooty</span></div>
+        <div class="logistics-item"><label>Distance</label><span>175 km total</span></div>
+        <div class="logistics-item"><label>Wildlife Zone</label><span>Speed limit 25 kmph enforced</span></div>
+        <div class="logistics-item"><label>Hairpins</label><span>18 km, 36 bends, NO overtaking</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Check Out & Depart</span>
+            <h4>Leave Mysuru — Route: SH88 South toward Nanjangud</h4>
+            <p>Grab something small from hotel. No time for a sit-down breakfast — you'll have a proper one stop en route.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Nanjangud — Srikanteshwara Temple (Brief Stop)</h4>
+              <a href="https://maps.google.com/?q=11.9869,76.6458" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>One of Karnataka's five sacred Shiva shrines (pancha linga kshetras). On the Kabini river bank — the same Kabini whose source is in Coorg, the same forest you drove past two days ago. Morning darshan if the temple is open (opens 7 AM). 15-min stop maximum.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:15 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <div class="tl-card-header">
+              <h4>Gundlupet — Fuel & Eat</h4>
+              <a href="https://maps.google.com/?q=11.6714,76.4956" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p><strong>Fill the fuel tank completely.</strong> This is the last petrol station before Mudumalai. Small town restaurants for idli or vada + coffee. 30 min stop. Don't skip the refuel.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Enter Mudumalai Tiger Reserve</h4>
+              <a href="https://maps.google.com/?q=11.5728,76.5292" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Speed limit: <strong>25 kmph. Camera-enforced.</strong> Windows down. This is the Nilgiris Biosphere Reserve — 3,500 sq km of connected forest, one of Asia's most important wildlife corridors. Drive slowly and scan treelines. Common sightings: spotted deer in herds, Indian gaur (massive bison), langur monkeys, peacocks displaying in May (mating season). <strong>If you see an elephant on the road: stop, engine off, wait silently. Never honk.</strong></p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Indian_Elephant_near_Theppakadu%2C_Mudumalai.jpg/1280px-Indian_Elephant_near_Theppakadu%2C_Mudumalai.jpg" class="location-img" alt="Mudumalai Elephant" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:45 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Theppakadu Elephant Camp — Forest Department</h4>
+              <a href="https://maps.google.com/?q=11.6875,76.5497" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Tamil Nadu Forest Department's operational elephant camp — different from tourist-facing Dubare. These 20+ elephants do actual work: fire protection, timber operations, rescue. Watch morning feeding from the platform. Coracle ride on the Moyar river ₹50. 45 minutes.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:30 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Masinagudi — Highway Dhaba</h4>
+              <a href="https://maps.google.com/?q=11.6,76.5" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Basic veg meals, sambar, rice, rasam. Nothing fancy. Eat quickly — the hairpin drive starts in 30 minutes. Don't eat too heavily before the bends.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:15 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Masinagudi–Ooty Hairpin Ascent — 18 km, 36 Bends</h4>
+              <a href="https://maps.google.com/?q=11.5,76.57" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>The most dramatic road section of the entire trip. The road climbs 1,200 metres in 18 km. Sequence: Bends 1–7: dense deciduous forest. Bends 8–14: forest gives way to shola grasslands, first tea estates appear. Bend 15–20: <strong>you enter the cloud layer — temperature drops 8–10°C in under 5 minutes, visibility can drop to 20m, valley below vanishes.</strong> Bends 20–36: tea estates and Ooty entry. <strong>No overtaking on hairpins. Some bends are single-lane. Go slow. Honk on blind corners.</strong></p>
+            <div class="flag flag-green" style="margin-top:12px;">
+              <div class="flag-icon">✅</div>
+              <div class="flag-body">
+                <label>E-Pass Checkpoint at Masinagudi (~Bend 8)</label>
+                <p>Show QR code + driving licence. Takes 2 min if you have it. ₹300 Green Tax cash. Moving on.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:00 PM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <h4>Arrive Ooty — Check In Savoy Hotel</h4>
+            <p>Drop bags. The Savoy garden in the afternoon is quiet and cold. Have hot tea. Buy Ooty chocolate from a shop near the hotel.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Doddabetta Peak — 2,637m</h4>
+              <a href="https://maps.google.com/?q=11.4020,76.7360" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>9 km from town, ₹30 entry. Highest point in the Nilgiris — highest in Tamil Nadu. Tea estate roads all the way to the top. Telescope House at summit. By 3 PM it's usually inside cloud — the summit disappears into white mist at 15m visibility. That is itself the experience. Temperature at top: 13–15°C. Wind constant. 1 hour.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Doddabetta_peak_view.jpg/1280px-Doddabetta_peak_view.jpg" class="location-img" alt="Doddabetta Peak" onerror="this.style.display='none'">
+            <p class="img-caption">Panorama from the summit of Doddabetta Peak</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:00 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Charring Cross — Ooty Bazaar</h4>
+              <a href="https://maps.google.com/?q=Charing+Cross+Ooty" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Buy: <strong>King Star Chocolates</strong> (best homemade chocolate in Ooty, Commercial Road), Nilgiri single-estate tea (buy from an estate shop, not tourist packs), eucalyptus oil, plum wine. Budget ₹1,500. Negotiate 20–30% off on everything.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <div class="tl-card-header">
+              <h4>Sidewalk Café, Ooty</h4>
+              <a href="https://maps.google.com/?q=Sidewalk+Cafe+Ooty+Charing+Cross" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Near Charing Cross. Best restaurant in Ooty — Western + South Indian fusion, warm interiors. Or <strong>Hotel Tamil Nadu Restaurant</strong> for local Nilgiri mutton curry, rice and bone broth.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Check IRCTC — Toy Train</h4>
+            <p>Open IRCTC app. Check Ooty–Coonoor train, May 26. Any cancellations? If available, buy. If not, proceed to Tatkal plan below.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TATKAL SECTION -->
+      <div class="tatkal-section">
+        <div class="tatkal-header">
+          <h3>🚂 Toy Train — Tatkal Strategy</h3>
+          <span>(Conditional Plan for May 25 action)</span>
+        </div>
+        <div class="tatkal-body">
+          <p><strong>Tonight (May 25), set an alarm for 7:55 AM tomorrow morning.</strong></p>
+          <p>Tatkal booking for the Nilgiri Mountain Railway opens exactly 1 day in advance at <strong>8:00 AM sharp</strong> on IRCTC. For May 26 journey, Tatkal opens May 25 at 8 AM — but you'll be driving through Mudumalai. So tonight, from the hotel, check if regular tickets are available. If not available tonight, the <strong>Tatkal window for May 26 is 8:00 AM on May 25</strong> — meaning you've already missed it if reading this on May 25 evening.</p>
+          <p><strong>Day-of station quota option:</strong> Go to Ooty Railway Station in person on the morning of Day 7 (May 26) between 6:30–7:30 AM. Ask the booking counter specifically for <em>"station quota"</em> for the 12:15 PM departure. These seats are separate from IRCTC and sometimes available on the day.</p>
+          <div class="flag flag-amber" style="margin-top:0;">
+            <div class="flag-icon">⚠️</div>
+            <div class="flag-body">
+              <label>If You Get the Train (Ooty → Coonoor)</label>
+              <p>Car stays parked at <strong>Ooty Railway Station</strong>. You take the train to Coonoor. After Coonoor sightseeing, take a <strong>cab or bus back to Ooty</strong> (~45 min, ₹400–600 cab). Pick up the car at Ooty Station. Day 8 remains unchanged — drive to CJB.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 7 ═══════════════ -->
+  <div id="day7" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Nilgiri_Mountain_Railway_in_Ooty.jpg/1280px-Nilgiri_Mountain_Railway_in_Ooty.jpg'); background-color:#1A2A1A;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 7 · Monday, May 26</div>
+        <h2>Ooty · Coonoor · Tea · Trains <span>/ Last Full Day</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Early morning at the Botanical Garden (before the crowds), then drive or train to Coonoor for the tea factory tour, Sim's Park, and Lamb's Rock viewpoint. Back to Ooty for the sunset. Last dinner in the Nilgiris. Pack bags tonight.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-activity">🌿 Botanical Garden (Pre-crowd)</span>
+          <span class="tldr-pill pill-activity">🍵 Highfield Tea Factory</span>
+          <span class="tldr-pill pill-activity">🌄 Lamb's Rock View</span>
+          <span class="tldr-pill pill-food">🍽 Jhonson's Café, Coonoor</span>
+          <span class="tldr-pill pill-food">🥩 Nilgiri Mutton Stew Dinner</span>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Stay</label><span>Savoy Hotel, Ooty (Night 7)</span></div>
+        <div class="logistics-item"><label>Coonoor</label><span>19 km from Ooty</span></div>
+        <div class="logistics-item"><label>Note</label><span>Pack all bags tonight — checkout at 8 AM tomorrow</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour — Standard Plan (No Train)</span></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Optional</span>
+            <h4>Ooty Railway Station — Station Quota Counter</h4>
+            <p>If you haven't given up on the toy train, walk to the station (10 min from most hotels). Ask counter for station quota on 12:15 PM or 3:00 PM Ooty–Coonoor train. If yes — buy and follow the train plan below. If no — proceed as below.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Government Botanical Garden — Opens 7 AM Sharp</h4>
+              <a href="https://maps.google.com/?q=11.4189,76.7114" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>₹100 entry. Go before 9 AM — before tour buses. 22 hectares on the Doddabetta slopes. Morning mist is still on the grass. Key spots: the <strong>20-million-year fossilized tree trunk</strong> (just sitting on a lawn, unassumingly), Italian terraced gardens, the bonsai collection, ancient tree ferns found nowhere else in India. 1.5 hours.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Government_Botanical_Gardens%2C_Ooty.jpg/1280px-Government_Botanical_Gardens%2C_Ooty.jpg" class="location-img" alt="Ooty Botanical Garden" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <h4>Small Café Near Garden Entrance</h4>
+            <p>Poha or upma, local chai. Simple. ₹60–80 per head.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive — 19 km Scenic Tea Estate Road</span>
+            <h4>Ooty → Coonoor (35–40 min)</h4>
+            <p>This route through the tea estates is beautiful — some argue it rivals the train view. Right side of road has better valley drops. Take your time.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>10:15 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Sim's Park, Coonoor</h4>
+              <a href="https://maps.google.com/?q=11.3564,76.6414" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Opens 9 AM. ₹15 entry. 12 acres terraced on a hill, 1,000+ plant species, Japanese rock garden section. Quieter than Ooty's garden — fewer tour groups, more intimate. 45 minutes.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Sim%27s_Park%2C_Coonoor_JEG9187.jpg/1280px-Sim%27s_Park%2C_Coonoor_JEG9187.jpg" class="location-img" alt="Sim's Park" onerror="this.style.display='none'">
+            <p class="img-caption">The terraced gardens of Sim's Park, Coonoor</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:15 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Lamb's Rock — Cliff Viewpoint</h4>
+              <a href="https://maps.google.com/?q=11.3344,76.6192" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>4 km from town, ₹30 vehicle entry. Edge of a cliff 2,000m above the Coimbatore plains. On a clear morning you see the plains extending to the horizon — the same plains you'll drive through tomorrow to reach the airport. Western Ghats scarp face in full geological drama. 30 minutes.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lamb%27s_Rock%2C_Coonoor.jpg/1280px-Lamb%27s_Rock%2C_Coonoor.jpg" class="location-img" alt="Lamb's Rock" onerror="this.style.display='none'">
+            <p class="img-caption">The dramatic drop at Lamb's Rock, Coonoor</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Highfield Tea Factory — Working Factory</h4>
+              <a href="https://maps.google.com/?q=Highfield+Tea+Factory+Coonoor" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Free/₹50 entry. 4 stages of tea production visible: <strong>Withering</strong> (fresh leaves on mesh racks, moisture removed overnight), <strong>Rolling</strong> (leaves twisted to break cell walls, release enzymes), <strong>Fermentation/Oxidation</strong> (leaves turn copper — flavour develops here), <strong>Drying</strong> (fired at 95°C to stop fermentation). The smell inside during drying is extraordinary — concentrated Nilgiri tea aroma fills the room. Buy from factory — 40% cheaper than market price. 1 hour.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Highfield_Tea_Estate%2C_Coonoor.jpg/1280px-Highfield_Tea_Estate%2C_Coonoor.jpg" class="location-img" alt="Highfield Tea Factory" onerror="this.style.display='none'">
+            <p class="img-caption">Tea production at the Highfield Tea Estate</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:15 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <div class="tl-card-header">
+              <h4>Jhonson's Café, Coonoor</h4>
+              <a href="https://maps.google.com/?q=Jhonson+Cafe+Coonoor" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Colonial bungalow, garden seating, the best meal setting of the entire trip. Open air, cool breeze, stone walls. Order: Nilgiri lamb chops, freshly baked bread, garden salad. This is the meal you remember from the trip.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Lady Canning's Seat — Valley Viewpoint</h4>
+              <a href="https://maps.google.com/?q=11.335,76.631" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>3 km from Coonoor town. Colonial-era named viewpoint, panoramic valley view toward Mettupalayam. 30 minutes.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:30 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Coonoor → Ooty (19 km, 40 min)</h4>
+            <p>Back through the tea estates. Pick up the car from wherever it's parked.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:30 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Ooty Viewpoint — Last Sunset in Nilgiris</h4>
+              <a href="https://maps.google.com/?q=11.4056,76.7196" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>360° panoramic view of the Ooty valley and surrounding ranges. Clouds settle into the valleys at 5–6 PM in May — the light on the tea estates turns golden. Final photos of the trip's mountain chapter.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner — Last Nilgiri Meal</span>
+            <div class="tl-card-header">
+              <h4>Savoy Hotel Dining Room</h4>
+              <a href="https://maps.google.com/?q=Savoy+Hotel+Ooty" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Dine at the hotel tonight. Order: <strong>Nilgiri mutton stew</strong> — a colonial-era recipe, slow-cooked with Nilgiri herbs and coconut milk. Completely different from any Mumbai version. Also: fresh-baked bread, Nilgiri filter coffee. The dining room with its fireplace and 1829 wooden beams is the right setting for the last Ooty dinner.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Pack Bags — Checkout Tomorrow 8 AM</h4>
+            <p>Fuel car tonight if possible. Check flight time. Set alarm. Final IRCTC check is not needed — the train opportunity is past.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TATKAL ALTERNATE DAY PLAN -->
+      <div class="tatkal-section">
+        <div class="tatkal-header">
+          <h3>🚂 If You Got the Toy Train Ticket</h3>
+          <span>Alternate itinerary — Ooty → Coonoor by train</span>
+        </div>
+        <div class="tatkal-body">
+          <p>If you secured a ticket for the <strong>10:00 AM or 12:15 PM Ooty → Coonoor train</strong>:</p>
+          <p>7:00 AM Botanical Garden (same). 9:00 AM Breakfast. Then drive to Ooty Railway Station by 9:30 AM. <strong>Park the car at the station car park</strong>. Board the train. 1.5-hr journey through tea estates, 250 bridges, 16 tunnels — right-side seat. Arrive Coonoor. Do Sim's Park, Lamb's Rock, Highfield Factory, lunch at Jhonson's Café. At 4:00–5:00 PM, take a <strong>cab from Coonoor to Ooty Station</strong> (₹400–600, 45 min). Collect the car. Evening plan same as above.</p>
+          <div class="flag flag-green">
+            <div class="flag-icon">✅</div>
+            <div class="flag-body">
+              <label>Car Is Safe — This Works Fine</label>
+              <p>Ooty Railway Station has a proper parking area. Car stays at Ooty station while you're on the train. Cab back afterward. <strong>Day 8 drive to CJB is unchanged.</strong> The car is always with you — no car left at Mettupalayam or Coonoor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ DAY 8 ═══════════════ -->
+  <div id="day8" class="page">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Coimbatore_airport_terminal.jpg/1280px-Coimbatore_airport_terminal.jpg'); background-color:#1A1A2A;"></div>
+      <div class="day-hero-content">
+        <div class="day-badge">Day 8 · Tuesday, May 27</div>
+        <h2>Ooty → Coimbatore → Mumbai <span>/ Homeward</span></h2>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="tldr">
+        <h3>TL;DR</h3>
+        <p>Easy morning checkout from Savoy. Drive 85 km down from the Nilgiris to Coimbatore airport. Drop EVM car at EVM Coimbatore outlet. Afternoon/evening flight home to Mumbai. 8 days, 600 km, 3 of India's greatest landscapes behind you.</p>
+        <div class="tldr-pills">
+          <span class="tldr-pill pill-drive">🚗 Ooty → CJB: 85 km, ~2.5 hrs</span>
+          <span class="tldr-pill pill-activity">🚗 Drop EVM at Coimbatore</span>
+          <span class="tldr-pill pill-food">🍳 Annapoorna — Coimbatore Breakfast</span>
+          <span class="tldr-pill pill-drive">✈ CJB → Mumbai (3 PM+ flight)</span>
+        </div>
+      </div>
+
+      <div class="flag flag-red">
+        <div class="flag-icon">🚨</div>
+        <div class="flag-body">
+          <label>Confirm EVM Drop Location Before Trip</label>
+          <p>Verify the exact Coimbatore drop-off address with EVM before May 20. They may have a specific outlet near the airport or in the city. Note their drop-off hours — arrive at least 30 min before they close. Get confirmation of all charges at drop-off.</p>
+        </div>
+      </div>
+
+      <div class="logistics">
+        <div class="logistics-item"><label>Checkout</label><span>Savoy Hotel, 8:00 AM</span></div>
+        <div class="logistics-item"><label>Drive</label><span>85 km, ~2.5 hrs</span></div>
+        <div class="logistics-item"><label>Route</label><span>Ooty → Mettupalayam → CJB</span></div>
+        <div class="logistics-item"><label>Flight</label><span>Book 3 PM+ for safe buffer</span></div>
+      </div>
+
+      <div class="section-divider"><span>Hour by Hour</span></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 AM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Final Morning in Ooty — Tea Estates</h4>
+            <p>Take 20 min before checkout. Walk the Savoy hotel garden. The Nilgiri morning: cold, misty, tea-scented. This is the last of the hills.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Check Out & Depart</span>
+            <h4>Leave Ooty — Route via Mettupalayam</h4>
+            <p>The descent from Ooty to Mettupalayam (55 km) is through the same tea estates and hairpin roads as the ascent but on a different highway. Cooler, less traffic than the Masinagudi route.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:30 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <div class="tl-card-header">
+              <h4>Annapoorna Sree Krishna, Gandhipuram, Coimbatore</h4>
+              <a href="https://maps.google.com/?q=Annapoorna+Sree+Krishna+Gandhipuram+Coimbatore" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>One of Coimbatore's iconic breakfast restaurants. Idli, dosa, vada, filter coffee — the real deal. ~₹120 per head. 30-min detour into the city if time permits. Or eat at the airport if tight on time.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:00 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>EVM Wheels Drop — Coimbatore</h4>
+              <a href="https://evmwheels.com" target="_blank" class="map-btn">↗ EVM Site</a>
+            </div>
+            <p>Return the car. EVM agent does walk-around inspection (you have your pre-trip photos if needed). Settle any dues. Get fuel cost reimbursement or pay balance as per contract. <strong>Get a drop confirmation receipt.</strong></p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:00 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Coimbatore Airport — Check In</h4>
+            <p>CJB is a small, easy airport. Bag drop and security takes 20–30 minutes. Buy last Nilgiri tea packs at the airport shop. Book 3 PM+ flight for a completely relaxed morning.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:00 PM+</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Fly Home</span>
+            <h4>Coimbatore (CJB) → Mumbai — 1.5 hrs</h4>
+            <p>IndiGo or Air India Express. Land Mumbai ~4:30–5:30 PM. Home by evening. 600 km of Western Ghats behind you.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:40px; padding:28px 32px; background:var(--dark); border-radius:12px; color:#fff;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; margin-bottom:8px; line-height:1.3;">The Circuit: Complete.</div>
+        <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.8;">Kerala coast → Coorg coffee highlands → Mysuru's royal corridors → Nilgiri cloud forest. One car, one arc, no backtracking. The same Kaveri river you first saw at its sacred source on Brahmagiri Hill in Coorg — you watched its water fill the KRS reservoir at Brindavan Gardens in Mysuru. Eight days, three districts, three Indian states.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end .main -->
+
+<script>
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
