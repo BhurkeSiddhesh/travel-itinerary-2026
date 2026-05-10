@@ -17,12 +17,13 @@ View the interactive itinerary here:
 
 ## 🗺️ The Circuit
 1. **Kannur → Coorg:** Arrival and coastal-to-highland drive.
-2. **Coorg Deep:** Waterfalls, Namdroling Monastery, and coffee estate walks.
-3. **Coorg → Mysuru:** Heritage stays and royal palace visits.
-4. **Mysuru Full Day:** Chamundi Hills, Zoo, and Brindavan Musical Gardens.
-5. **Mysuru → Ooty:** Mudumalai wildlife drive and the 36-hairpin mountain ascent.
-6. **Ooty & Coonoor:** Tea factories, toy trains, and Nilgiri viewpoints.
-7. **Coimbatore → Home:** Final descent and flight from CJB.
+2. **Coorg Local:** Waterfalls, Namdroling Monastery, and coffee estate walks.
+3. **Coorg Deep:** Dubare Elephant Camp and the source of the Kaveri.
+4. **Coorg → Mysuru:** Heritage stays and royal palace visits.
+5. **Mysuru Full Day:** Chamundi Hills, Zoo, and Brindavan Musical Gardens.
+6. **Mysuru → Ooty:** Mudumalai wildlife drive and the 36-hairpin mountain ascent.
+7. **Ooty & Coonoor:** Tea factories, toy trains, and Nilgiri viewpoints.
+8. **Coimbatore → Home:** Final descent and flight from CJB.
 
 ## 🛠️ Tech Stack
 - **HTML5:** Semantic structure.
