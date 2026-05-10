@@ -754,9 +754,124 @@
     .main { margin-left: 0; }
     .page { display: block !important; page-break-after: always; }
   }
+
+  /* MOBILE RESPONSIVENESS */
+  .mobile-header {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: var(--dark);
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobile-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: var(--gold);
+    cursor: pointer;
+    padding: 10px;
+    margin-right: -10px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .mobile-header { display: flex; }
+    
+    .sidebar {
+      left: -220px;
+      transition: transform 0.3s ease;
+      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .sidebar.open {
+      transform: translateX(220px);
+    }
+
+    .main {
+      margin-left: 0;
+      padding-top: 60px; /* Space for mobile header */
+    }
+
+    /* Padding Adjustments */
+    .cover { padding: 60px 24px 40px; }
+    .day-body { padding: 32px 24px 60px; }
+    .page-header { padding: 32px 24px 0; }
+    .checklist-page { padding: 32px 24px 60px; }
+    #checklist div[style*="padding: 0 60px 80px"] { padding: 0 24px 60px !important; }
+    div[style*="padding: 56px 60px 60px"] { padding: 40px 24px 60px !important; }
+
+    /* Typography scaling */
+    .cover h1 { font-size: 48px; }
+    .cover-subtitle { font-size: 18px; }
+    .cover-meta { flex-wrap: wrap; gap: 20px; }
+    .day-hero h2 { font-size: 32px; }
+    .day-hero h2 span { font-size: 20px; }
+    .day-hero-content { padding: 24px; }
+
+    /* Grid layouts */
+    div[style*="display:grid; grid-template-columns:1fr 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+    .check-grid { grid-template-columns: 1fr; }
+
+    /* Logistics */
+    .logistics { flex-direction: column; }
+    .logistics-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .logistics-item:last-child { border-bottom: none; }
+
+    /* Timeline */
+    .timeline::before { left: 24px; }
+    .tl-dot { left: 17px; }
+    .tl-item { grid-template-columns: 1fr; gap: 0; padding-left: 50px; }
+    .tl-time { text-align: left; padding-bottom: 8px; }
+    .tl-time span { font-size: 11px; }
+
+    /* Stay card */
+    .stay-card { flex-direction: column; gap: 12px; }
+    .stay-icon { margin-top: 0; font-size: 24px; }
+
+    /* TATKAL */
+    .tatkal-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+
+  /* Support for iPhone Safe Areas */
+  @supports (padding: env(safe-area-inset-bottom)) {
+    .sidebar {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-header {
+      padding-top: env(safe-area-inset-top);
+      height: calc(60px + env(safe-area-inset-top));
+    }
+    .main {
+      padding-top: calc(60px + env(safe-area-inset-top));
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
 </style>
 </head>
 <body>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <div class="mobile-brand">Coorg · Mysuru · Ooty</div>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+</div>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
@@ -2421,6 +2536,15 @@ function show(id) {
   document.getElementById(id).classList.add('active');
   document.getElementById('nav-' + id).classList.add('active');
   window.scrollTo(0, 0);
+  
+  // Close sidebar on mobile/tablet after selection
+  if (window.innerWidth <= 1024) {
+    document.querySelector('.sidebar').classList.remove('open');
+  }
+}
+
+function toggleMenu() {
+  document.querySelector('.sidebar').classList.toggle('open');
 }
 </script>
 </body>
