@@ -1,0 +1,121 @@
+--- Nanachi ---
+Booking	No.
+:	SB20260515002457
+Safari	Location
+:	Nanachi	Gate
+Date	Of	Visit
+:	May	23,	2026
+Booking	Date
+:	2026-05-15	00:24:57
+Session
+:	Evening
+Slot	Time
+:	3:00	PM	-	5:00	PM
+Safari	Type
+:	3-Bus	Safari
+Number	of	Visitors
+:	2
+Amount
+:	₹1200.00
+Customer	Details
+First	Name
+Last	Name
+Age
+Gender
+ID	Proof
+ID	Proof	Number
+Snehal
+Pawar
+32
+Female
+Pan	Card
+BZLPP8457K
+Siddhesh
+Bhurke
+32
+Male
+Pan	Card
+BHLPB8183N
+Type
+Qty
+Price
+Indian	Adult	Entry	Fee	(₹600.00)
+2
+1200.00
+GST	Total	:	0	(CGST:0	+	SGST:0	+	IGST:0)
+Total
+1200.00
+Note	:	
+Please	show	this	QR	code	at	the	entrance.	Please	note	that	a	valid	ID	proof	will	be	required	along	with	the	E-ticket.	It	is
+non-transferable	and	non-cancelable.
+No	cancellation	for	safari	tickets
+Safari	rules	and	regulations
+ALL	VISITORS	SHALL	CARRY	Identity	card	with	name	and	address,	issued	by	the	government	(such	as	Aadhaar/	Driving
+License	/Voter	ID	/	Passport)	any	one	of	the	aboveThere	will	be	no	toilet	breaks	during	the	Safari
+Visitors	have	to	maintain	silence	during	the	safari.	Visitors	should	not	peep	out	and	put	their	hands	outside	the	safari	vehicle.
+Visitors	shall	not	alight	from	the	vehicle	at	any	given	point	of	time	and	shall	strictly	follow	the	instructions	given	by	driver	/
+nature	guide/	department	officials
+No	Mobile	Phones:	Mobile	phones	are	strictly	prohibited	during	the	safari.	Visitors	must	leave	their	phones	in	their	private
+vehicles	or	deposit	them	safely	at	the	designated	ticket	counters.
+Visitors	should	follow	all	the	guidelines	issued	by
+
+--- Kabini ---
+Booking	No.
+:	SB20260515073525
+Safari	Location
+:	Kakanakote	(Kabini)
+Date	Of	Visit
+:	May	24,	2026
+Booking	Date
+:	2026-05-15	07:35:25
+Session
+:	Morning
+Slot	Time
+:	6:30	AM	-	9:30	AM
+Safari	Type
+:	3-Bus	Safari
+Number	of	Visitors
+:	2
+Amount
+:	₹1200.00
+Customer	Details
+First	Name
+Last	Name
+Age
+Gender
+ID	Proof
+ID	Proof	Number
+Snehal
+Pawar
+32
+Female
+Pan	Card
+BZLPP8457K
+Siddhesh
+Bhurke
+32
+Male
+Pan	Card
+BHLPB8183N
+Type
+Qty
+Price
+Indian	Adult	Entry	fee	(₹600.00)
+2
+1200.00
+GST	Total	:	0	(CGST:0	+	SGST:0	+	IGST:0)
+Total
+1200.00
+Note	:	
+Please	show	this	QR	code	at	the	entrance.	Please	note	that	a	valid	ID	proof	will	be	required	along	with	the	E-ticket.	It	is
+non-transferable	and	non-cancelable.
+No	cancellation	for	safari	tickets
+Safari	rules	and	regulations
+ALL	VISITORS	SHALL	CARRY	Identity	card	with	name	and	address,	issued	by	the	government	(such	as	Aadhaar/	Driving
+License	/Voter	ID	/	Passport)	any	one	of	the	aboveThere	will	be	no	toilet	breaks	during	the	Safari
+Visitors	have	to	maintain	silence	during	the	safari.	Visitors	should	not	peep	out	and	put	their	hands	outside	the	safari	vehicle.
+Visitors	shall	not	alight	from	the	vehicle	at	any	given	point	of	time	and	shall	strictly	follow	the	instructions	given	by	driver	/
+nature	guide/	department	officials
+No	Mobile	Phones:	Mobile	phones	are	strictly	prohibited	during	the	safari.	Visitors	must	leave	their	phones	in	their	private
+vehicles	or	deposit	them	safely	at	the	designated	ticket	counters.
+Visitors	should	follow	all	the	guidelines	is

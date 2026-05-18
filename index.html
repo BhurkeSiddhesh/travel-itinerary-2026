@@ -29,6 +29,73 @@
     min-height: 100vh;
   }
 
+  /* OFFLINE TICKET LINKS */
+  .offline-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(124, 78, 42, 0.08);
+    border: 1px solid rgba(124, 78, 42, 0.2);
+    color: var(--coffee);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-left: 4px;
+  }
+  
+  .offline-pdf:hover {
+    background: var(--coffee);
+    color: #fff;
+    border-color: var(--coffee);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(124, 78, 42, 0.15);
+  }
+
+  .offline-pdf::before {
+    content: '📄';
+    font-size: 10px;
+  }
+
+  .offline-pdf-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(58, 92, 53, 0.08);
+    border: 1px solid rgba(58, 92, 53, 0.2);
+    color: var(--forest);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .offline-pdf-inline:hover {
+    background: var(--forest);
+    color: #fff;
+    border-color: var(--forest);
+    transform: translateY(-1px);
+  }
+
+  .offline-pdf-inline::before {
+    content: '🎫';
+    font-size: 9px;
+  }
+
+  .pdf-link {
+    background: #EDE6DA;
+    color: var(--dark);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: monospace;
+    font-weight: bold;
+  }
+
   /* SIDEBAR */
   .sidebar {
     width: 220px;
@@ -895,13 +962,13 @@
       <span class="day-num">3</span> Coorg — Elephants
     </a>
     <a href="#" onclick="show('day4')" id="nav-day4">
-      <span class="day-num">4</span> → Mysuru
+      <span class="day-num">4</span> Nagarhole Safari
     </a>
     <a href="#" onclick="show('day5')" id="nav-day5">
-      <span class="day-num">5</span> Mysuru Full Day
+      <span class="day-num">5</span> Nagarhole → Ooty
     </a>
     <a href="#" onclick="show('day6')" id="nav-day6">
-      <span class="day-num">6</span> → Ooty via Wild
+      <span class="day-num">6</span> Ooty Gardens
     </a>
     <a href="#" onclick="show('day7')" id="nav-day7">
       <span class="day-num">7</span> Ooty & Coonoor
@@ -930,7 +997,7 @@
           <span class="circuit-arrow">›</span>
           <span class="circuit-stop">Coorg</span>
           <span class="circuit-arrow">›</span>
-          <span class="circuit-stop">Mysuru</span>
+          <span class="circuit-stop">Nagarhole</span>
           <span class="circuit-arrow">›</span>
           <span class="circuit-stop">Ooty</span>
           <span class="circuit-arrow">›</span>
@@ -948,7 +1015,7 @@
     <div style="padding: 56px 60px 60px; max-width: 860px;">
       <div class="section-divider"><span>The Route</span></div>
       <p style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:300; line-height:1.8; color:#3A2E1E; margin-bottom:28px;">
-        A one-way self-drive arc from the Kerala coast through the coffee highlands of Kodagu, down into Mysuru's royal heritage, and up into the Nilgiri clouds — ending at Coimbatore airport.
+        A one-way self-drive arc from the Kerala coast through the coffee highlands of Kodagu, through the deep forests of Nagarhole, and up into the Nilgiri clouds — ending at Coimbatore airport.
         EVM Wheels pickup at Kannur Airport. Drop at Coimbatore.
       </p>
 
@@ -956,17 +1023,17 @@
         <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
           <div style="font-size:28px; margin-bottom:8px;">🌿</div>
           <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Coorg (Madikeri)</div>
-          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">3 nights · May 20–22<br>Coffee estates, elephants, Buddhist monastery</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">3 nights · May 20–23<br>Coffee estates, elephants, Buddhist monastery</div>
         </div>
         <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
-          <div style="font-size:28px; margin-bottom:8px;">🏛️</div>
-          <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Mysuru</div>
-          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">2 nights · May 23–24<br>Palace, Chamundi Hills, Brindavan Gardens</div>
+          <div style="font-size:28px; margin-bottom:8px;">🐅</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Nagarhole (Kabini)</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">1 night · May 23–24<br>Tiger Reserve, afternoon & morning safaris, Kabini river</div>
         </div>
         <div style="background:#fff; border:1px solid #EDE6DA; border-radius:10px; padding:20px;">
           <div style="font-size:28px; margin-bottom:8px;">🌄</div>
           <div style="font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; margin-bottom:4px;">Ooty & Coonoor</div>
-          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">2 nights · May 25–26<br>Nilgiri peaks, tea estates, toy train</div>
+          <div style="font-size:12px; color:#8A7D6E; line-height:1.5;">3 nights · May 24–27<br>Nilgiri peaks, tea estates, botanical gardens</div>
         </div>
       </div>
 
@@ -996,22 +1063,42 @@
         <div class="check-list">
           <div class="check-item">
             <input type="checkbox" id="c5" checked>
-            <label for="c5"><strong>Coorg - Beans & Blossom</strong><span>3 nights (May 20-23). Airbnb. PAID. See <code>tickets-bookings/COORG Stay.pdf</code></span></label>
+            <label for="c5"><strong>Coorg - Beans & Blossom</strong><span>3 nights (May 20-23). Airbnb. PAID. Confirmation Code: <code class="pdf-link">HM5EWR9PZR</code>. Stored: <a href="tickets-bookings/Reservation%20Details%20-%20HM5EWR9PZR.pdf" target="_blank" class="offline-pdf">Reservation Details - HM5EWR9PZR.pdf</a> / <a href="tickets-bookings/COORG%20Stay.pdf" target="_blank" class="offline-pdf">COORG Stay.pdf</a></span></label>
           </div>
           <div class="check-item">
             <input type="checkbox" id="c6" checked>
-            <label for="c6"><strong>Nagarhole - Arasu Homestay</strong><span>1 night (May 23-24). Agoda Booking #2008739872. PAID. See <code>tickets-bookings/Confirmation_for_Booking_ID_#_2008739872.pdf</code></span></label>
+            <label for="c6"><strong>Nagarhole - Arasu Homestay</strong><span>1 night (May 23-24). Agoda Booking #<code class="pdf-link">2008739872</code>. PAID. Stored: <a href="tickets-bookings/Confirmation_for_Booking_ID_#_2008739872.pdf" target="_blank" class="offline-pdf">Confirmation_for_Booking_ID_#_2008739872.pdf</a></span></label>
           </div>
           <div class="check-item">
             <input type="checkbox" id="c7" checked>
-            <label for="c7"><strong>Ooty - Snowdrops Ooty</strong><span>3 nights (May 24-27). Booking.com HM5EWR9PZR. PAID. See <code>tickets-bookings/Reservation Details - HM5EWR9PZR.pdf</code></span></label>
+            <label for="c7"><strong>Ooty - Snowdrops Ooty</strong><span>3 nights (May 24-27). Booking.com. PAID. Confirmation Screenshot: <a href="tickets-bookings/WhatsApp%20Image%202026-05-12%20at%2011.52.07%20PM.jpeg" target="_blank" class="offline-pdf">WhatsApp Image 2026-05-12 at 11.52.07 PM.jpeg</a></span></label>
           </div>
         </div>
         <h3>🎫 Activities & Permits</h3>
         <div class="check-grid">
           <div class="check-item">
-            <input type="checkbox" id="c8">
-            <label for="c8"><strong>Dubare Elephant Camp — BOOK NOW</strong><span>Morning slot 9–11 AM, May 22. <a href="https://www.dubareelephantcamp.com" target="_blank">dubareelephantcamp.com</a> or JLR. Fills weeks in advance.</span></label>
+            <input type="checkbox" id="c8" checked>
+            <label for="c8"><strong>Dubare Elephant Camp</strong><span>Morning slot 9–11 AM, May 22. PAID. Stored: <a href="tickets-bookings/dubare%20elephant%20camp%2022may.pdf" target="_blank" class="offline-pdf">dubare elephant camp 22may.pdf</a></span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c_safari1" checked>
+            <label for="c_safari1"><strong>Nagarhole Evening Safari</strong><span>Evening slot 3:00 PM–5:00 PM (Nanachi Gate), May 23. Ticket: <code class="pdf-link">SB20260515002457</code>. Stored: <a href="tickets-bookings/Nanachi%2023may_ticket_SB20260515002457.pdf" target="_blank" class="offline-pdf">Nanachi 23may_ticket_SB20260515002457.pdf</a></span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c_safari2" checked>
+            <label for="c_safari2"><strong>Nagarhole Morning Safari</strong><span>Morning slot 6:30 AM–9:30 AM (Kabini), May 24. Ticket: <code class="pdf-link">SB20260515073525</code>. Stored: <a href="tickets-bookings/kabini_24may_ticket_SB20260515073525.pdf" target="_blank" class="offline-pdf">kabini_24may_ticket_SB20260515073525.pdf</a></span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c_theppakadu" checked>
+            <label for="c_theppakadu"><strong>Theppakadu Elephant Camp</strong><span>Morning slot 8:30 AM–9:00 AM, May 25. Ticket: <code class="pdf-link">#30863</code>. Stored: <a href="tickets-bookings/Theppakadu%20Elephant%20tickets.pdf" target="_blank" class="offline-pdf">Theppakadu Elephant tickets.pdf</a></span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c_flight" checked>
+            <label for="c_flight"><strong>Flights (Indigo)</strong><span>BOM &rarr; CNN (May 20, PNR: <code class="pdf-link">N7YJJC</code>) &amp; CJB &rarr; BOM (May 27, PNR: <code class="pdf-link">S63N7F</code>). Stored: <a href="tickets-bookings/Flight_ETicket_0405260074543.pdf" target="_blank" class="offline-pdf">Flight_ETicket_0405260074543.pdf</a></span></label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="c_car" checked>
+            <label for="c_car"><strong>EVM Car Rental</strong><span>Datsun Redi GO AT. Pick up May 20 (Kannur), Drop off May 27 (Coimbatore). Booking: <code class="pdf-link">48634</code>. Stored: <a href="tickets-bookings/48634.pdf" target="_blank" class="offline-pdf">48634.pdf</a></span></label>
           </div>
           <div class="check-item">
             <input type="checkbox" id="c9">
@@ -1037,7 +1124,7 @@
           </div>
           <div class="check-item">
             <input type="checkbox" id="c13">
-            <label for="c13"><strong>₹2,000 Small Denomination Cash</strong><span>For entry tickets across trip. Abbey Falls, Fort, Chamundi, etc — many don't take UPI.</span></label>
+            <label for="c13"><strong>₹2,000 Small Denomination Cash</strong><span>For entry tickets across trip. Abbey Falls, Fort, Nagarhole, etc — many don't take UPI in forests.</span></label>
           </div>
         </div>
       </div>
@@ -1045,9 +1132,9 @@
       <div class="check-section">
         <h3>🌤 Weather Note</h3>
         <p style="font-size:14px; color:#5A4E40; line-height:1.8; background:#fff; padding:18px 22px; border-radius:10px; border:1px solid #EDE6DA;">
-          <strong>Coorg (May 20–22):</strong> Pre-monsoon. Light showers, misty mornings — beautiful. Pack a waterproof jacket.<br>
-          <strong>Mysuru (May 23–24):</strong> Hot, 34–38°C. Midday rest planned. Outdoor activities in morning and evening.<br>
-          <strong>Ooty (May 25–26):</strong> 14–22°C. Peak tourist season. Carry a light fleece — summit temperatures drop sharply.<br>
+          <strong>Coorg (May 20–23):</strong> Pre-monsoon. Light showers, misty mornings — beautiful. Pack a waterproof jacket.<br>
+          <strong>Nagarhole Safari (May 23–24):</strong> Tropical wildlife weather. Hot during day, cooler, damp evenings. High chance of animal sightings in early morning and late afternoon.<br>
+          <strong>Ooty (May 24–27):</strong> 14–22°C. Peak tourist season. Carry a light fleece — summit temperatures drop sharply.<br>
           <strong>Driving:</strong> Masinagudi hairpins may be slippery if wet. Drive slow on ghat roads.
         </p>
       </div>
@@ -1070,7 +1157,7 @@
         <p>Fly Mumbai–Kannur, pick up EVM car, drive through Wayanad into Coorg. Arrive Madikeri by evening. First sight of rolling coffee country. Sunset at Raja's Seat. Dinner with authentic Kodava cuisine.</p>
         <div class="tldr-pills">
           <span class="tldr-pill pill-drive">✈ Fly + 160 km Drive (~4.5 hrs)</span>
-          <span class="tldr-pill pill-stay">🏨 Amanvana Spa Resort, Coorg</span>
+          <span class="tldr-pill pill-stay">🏨 Beans & Blossom, Coorg</span>
           <span class="tldr-pill pill-activity">📍 Raja's Seat Sunset</span>
           <span class="tldr-pill pill-food">🍴 Capitol Hotel — Pandi Curry</span>
         </div>
@@ -1088,9 +1175,9 @@
         <div class="stay-icon">🏨</div>
         <div class="stay-info">
           <label>Tonight's Stay · 3 Nights</label>
-          <h4>Amanvana Spa Resort, Coorg</h4>
-          <p>River-facing cottages on the Kaveri river, lush estate surroundings, spa, outdoor pool. Best mid-luxury property in Coorg for a genuine coffee estate experience.</p>
-          <a href="https://maps.google.com/?q=Amanvana+Spa+Resort+Coorg" target="_blank">📍 View on Maps</a>
+          <h4>Beans & Blossom Estate Stay, Coorg</h4>
+          <p>A serene plantation estate stay on Madikeri-Napoklu Road offering two spacious, adjoining rooms hosted by Bops. Highly private, surrounded by coffee plants and pepper vines.</p>
+          <a href="https://maps.google.com/?q=Beans+and+Blossom+Estate+Stay+Coorg" target="_blank">📍 View on Maps</a>
         </div>
       </div>
 
@@ -1190,9 +1277,9 @@
           <div class="tl-card major-card">
             <div class="tl-card-header">
               <h4>Arrive Madikeri — Check In</h4>
-              <a href="https://maps.google.com/?q=Amanvana+Spa+Resort+Kushalnagar+Coorg" target="_blank" class="map-btn">📍 Resort</a>
+              <a href="https://maps.google.com/?q=Beans+and+Blossom+Estate+Stay+Madikeri+Napoklu+Road" target="_blank" class="map-btn">📍 Stay</a>
             </div>
-            <p>Amanvana is near Kushalnagar (~30 min from Madikeri town). Check in, freshen up, coffee from the estate. Allow 1 hour to settle in before heading out.</p>
+            <p>Beans & Blossom is located on Madikeri-Napoklu Road (~15-20 min from Madikeri town). Check in, freshen up, enjoy some fresh estate-brewed filter coffee, and settle in before heading out.</p>
           </div>
         </div>
 
@@ -1226,7 +1313,7 @@
           <div class="tl-time"><span>9:30 PM</span></div>
           <div class="tl-dot stay"></div>
           <div class="tl-card">
-            <h4>Back to Resort — Early Night</h4>
+            <h4>Back to Homestay — Early Night</h4>
             <p>Day 2 starts at 7 AM. Abbey Falls is best before 9:30 AM. Set alarm.</p>
           </div>
         </div>
@@ -1259,7 +1346,7 @@
 
       <div class="logistics">
         <div class="logistics-item"><label>Total Drive</label><span>~100 km</span></div>
-        <div class="logistics-item"><label>Stay</label><span>Amanvana, Coorg (Night 2)</span></div>
+        <div class="logistics-item"><label>Stay</label><span>Beans & Blossom, Coorg (Night 2)</span></div>
         <div class="logistics-item"><label>Key Distance</label><span>Madikeri–Bylakuppe: 45 km</span></div>
         <div class="logistics-item"><label>Note</label><span>Local day, no major highways</span></div>
       </div>
@@ -1282,7 +1369,7 @@
           <div class="tl-dot meal"></div>
           <div class="tl-card meal-card">
             <span class="meal-tag tag-breakfast">Breakfast</span>
-            <h4>Homestay / Resort Breakfast</h4>
+            <h4>Homestay Breakfast</h4>
             <p>Idli, chutney, filter coffee from estate-grown beans. The coffee here is from the property's own Arabica plants — different from anything you get in Mumbai. Eat fully; next meal is Tibetan food at 1 PM.</p>
           </div>
         </div>
@@ -1352,7 +1439,7 @@
           <div class="tl-dot drive"></div>
           <div class="tl-card drive-card">
             <span class="meal-tag tag-drive">Drive Back</span>
-            <h4>Bylakuppe → Resort (45 km, 1 hr)</h4>
+            <h4>Bylakuppe → Homestay (45 km, 1 hr)</h4>
             <p>Stop at Kushalnagar for sugarcane juice if it's hot. The drive back through the coffee belt in the afternoon light is different from the morning.</p>
           </div>
         </div>
@@ -1361,8 +1448,8 @@
           <div class="tl-time"><span>4:00 PM</span></div>
           <div class="tl-dot major"></div>
           <div class="tl-card major-card">
-            <h4>Coffee Estate Walk — Resort Arranged</h4>
-            <p>Ask the resort to arrange a guided estate walk (usually complimentary or ₹200). A worker will walk you through the Arabica rows, show pepper vines climbing the silver oak trees, explain the processing: pulping, fermenting, drying, hulling. Ask what the cost difference is between estate-direct and retail — usually 3–4x. Buy a kg directly if they sell it.</p>
+            <h4>Coffee Estate Walk — Homestay Arranged</h4>
+            <p>Ask the host Bops to arrange a guided estate walk on the property. Walk through the Arabica rows, see pepper vines climbing the silver oak trees, and learn about the processing: pulping, fermenting, drying, hulling. A wonderful, intimate estate experience.</p>
           </div>
         </div>
 
@@ -1420,14 +1507,14 @@
         <div class="flag-icon">🚨</div>
         <div class="flag-body">
           <label>Dubare Booking Required — Morning Slot ONLY</label>
-          <p>Elephant camp operates 9–11 AM only. Must book in advance at <a href="https://www.dubareelephantcamp.com" target="_blank">dubareelephantcamp.com</a> or via JLR (Jungle Lodges & Resorts). Late arrival forfeits your slot. Leave resort by 7:00 AM sharp. Dubare is 60 km away.</p>
+          <p>Elephant camp operates 9–11 AM only. Must book in advance at <a href="https://www.dubareelephantcamp.com" target="_blank">dubareelephantcamp.com</a> or via JLR (Jungle Lodges & Resorts). Late arrival forfeits your slot. Leave homestay by 7:00 AM sharp. Dubare is 60 km away.</p>
         </div>
       </div>
 
       <div class="logistics">
         <div class="logistics-item"><label>Drive Total</label><span>~140 km</span></div>
-        <div class="logistics-item"><label>Stay</label><span>Amanvana, Coorg (Night 3)</span></div>
-        <div class="logistics-item"><label>Note</label><span>Pack bags tonight — leaving for Mysuru tomorrow</span></div>
+        <div class="logistics-item"><label>Stay</label><span>Beans & Blossom, Coorg (Night 3)</span></div>
+        <div class="logistics-item"><label>Note</label><span>Pack bags tonight — leaving for Nagarhole tomorrow</span></div>
       </div>
 
       <div class="section-divider"><span>Hour by Hour</span></div>
@@ -1511,7 +1598,7 @@
               <h4>Talacauvery — Source of the Kaveri, 1276m</h4>
               <a href="https://maps.google.com/?q=12.3888,75.5344" target="_blank" class="map-btn">📍 Maps</a>
             </div>
-            <p>A small sacred kund (tank) marks the exact spring. The Kaveri flows 800 km from this quiet hilltop to the Bay of Bengal — feeding 80 million people, irrigating the delta rice bowl, powering the KRS Dam you'll see in Mysuru. Climb the 50 steps to the Brahmagiri viewpoint: 360° of the Coorg ranges. On a clear day, you can see the Western Ghats all the way to Kerala. Deeply underrated spot. 45 minutes.</p>
+            <p>A small sacred kund (tank) marks the exact spring. The Kaveri flows 800 km from this quiet hilltop to the Bay of Bengal — feeding 80 million people, irrigating the delta rice bowl, powering the Kabini reservoir you'll see in Nagarhole. Climb the 50 steps to the Brahmagiri viewpoint: 360° of the Coorg ranges. On a clear day, you can see the Western Ghats all the way to Kerala. Deeply underrated spot. 45 minutes.</p>
             <img src="images/talacauvery.jpg" class="location-img" alt="Talacauvery" onerror="this.style.display='none'">
             <p class="img-caption">The sacred origin of the Kaveri river at Talacauvery</p>
           </div>
@@ -1556,7 +1643,7 @@
               <h4>Hotel Coorg International — Farewell Coorg Dinner</h4>
               <a href="https://maps.google.com/?q=Hotel+Coorg+International+Madikeri" target="_blank" class="map-btn">📍 Maps</a>
             </div>
-            <p>Pork ribs Coorg style, Neer Dosa with chicken curry, Kodava Payasam for dessert. Pack bags tonight after dinner — checkout tomorrow at 7:30 AM for Mysuru.</p>
+            <p>Pork ribs Coorg style, Neer Dosa with chicken curry, Kodava Payasam for dessert. Pack bags tonight after dinner — checkout tomorrow at 9:00 AM for Nagarhole.</p>
           </div>
         </div>
 
@@ -1570,13 +1657,13 @@
       <div class="day-hero-bg" style="background-image: url('images/nagarhole_tiger.jpg'); background-color:#1A1208;"></div>
       <div class="day-hero-content">
         <div class="day-badge">Day 4 · Saturday, May 23</div>
-        <h2>Nagarhole Safari <span>/ The Kabini Backwaters</span></h2>
+        <h2>Nagarhole Safari <span>/ The Kabini Backwaters & Nanachi Gate</span></h2>
       </div>
     </div>
     <div class="day-body">
       <div class="tldr">
         <h3>TL;DR</h3>
-        <p>Morning drive from Coorg to Nagarhole via Hunsur. Check in to Arasu Homestay. Afternoon/Evening jungle safari in Nagarhole National Park (Kabini). Dinner at the homestay and sleep early.</p>
+        <p>Morning drive from Coorg to Nagarhole via Hunsur. Check in to Arasu Homestay. Afternoon/Evening jungle safari in Nagarhole National Park (Nanachi Gate). Dinner at the homestay and sleep early.</p>
         <div class="tldr-pills">
           <span class="tldr-pill pill-drive">🚗 Coorg → Nagarhole: 90 km, ~2.5 hrs</span>
           <span class="tldr-pill pill-activity">🐅 Nagarhole Evening Safari</span>
@@ -1584,45 +1671,82 @@
         </div>
       </div>
 
-      <div class="logistics-card">
-        <h3>Logistics & Navigation</h3>
+      <div class="logistics">
         <div class="logistics-item"><label>Route</label><span>Coorg → Hunsur → Nagarhole</span></div>
         <div class="logistics-item"><label>Temp</label><span>28-32°C in Nagarhole</span></div>
         <div class="logistics-item"><label>Stay</label><span>Arasu Homestay (Night 4)</span></div>
+        <div class="logistics-item"><label>Permit</label><span>Evening Safari Booked</span></div>
       </div>
 
       <div class="section-divider"><span>Hour by Hour</span></div>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="time">09:00 AM</div>
-          <div class="event">
-            <h4>Check out of Beans & Blossom</h4>
-            <p>Breakfast in Coorg, pack the car, and begin the drive down from the hills towards Hunsur.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Departure</span>
+            <h4>Check out of Beans & Blossom, Coorg</h4>
+            <p>Enjoy a final cup of estate coffee. Pack the Datsun Redi GO and depart Coorg. Take the downhill route passing through green hills towards Hunsur, driving at a relaxed pace.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">11:30 AM</div>
-          <div class="event">
-            <h4>Arrive at Arasu Homestay</h4>
-            <p>Check in to Arasu Homestay. Rest and have an early lunch before the safari.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:30 AM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Arrive at Arasu Homestay & Check-in</h4>
+              <a href="https://maps.google.com/?q=Arasu+Homestay+Nagarhole" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Agoda Booking ID: <code class="pdf-link">2008739872</code> (Booking.com ID: <code class="pdf-link">6773855451</code>). Settle into your rooms. The homestay is close to the park boundaries, surrounded by local farmlands. Freshen up and have a hearty, authentic local lunch prepared by your hosts. Stored ticket: <a href="tickets-bookings/Confirmation_for_Booking_ID_#_2008739872.pdf" target="_blank" class="offline-pdf-inline">Confirmation_for_Booking_ID_#_2008739872.pdf</a></p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">03:30 PM</div>
-          <div class="event">
-            <span class="meal-tag tag-activity">Safari Time</span>
-            <h4>Nagarhole National Park - Evening Safari</h4>
-            <p>Drive to the safari gate. The evening slot (4:00 PM - 6:30 PM) is optimal for tiger and leopard sightings near the Kabini backwaters as animals come to drink.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:15 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Drive to Nanachi Gate (Safari Point)</h4>
+            <p>Leave the homestay early to reach Nanachi Gate by 2:30 PM. Ensure you have physical IDs and printed permits ready at the forest department window.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">07:30 PM</div>
-          <div class="event">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:00 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Nagarhole Evening Safari (Nanachi Gate)</h4>
+              <a href="https://maps.google.com/?q=Nanachi+Gate+Nagarhole" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <span class="meal-tag tag-drive" style="background:#FFF0F0; color:#C0392B; border:1px solid #F5C6C0;">Booked Slot: 3:00 PM - 5:00 PM</span>
+            <p>Ticket Number: <code class="pdf-link">SB20260515002457</code>. Hop onto the forest department safari vehicle. Nagarhole is home to one of the highest densities of tigers in India, alongside majestic herds of Asian elephants, Indian gaur, dholes (wild dogs), and leopards. Keep your eyes sharp and cameras ready as you traverse the deciduous teak forests and approach water holes. Ticket PDF: <a href="tickets-bookings/Nanachi%2023may_ticket_SB20260515002457.pdf" target="_blank" class="offline-pdf-inline">Nanachi 23may_ticket_SB20260515002457.pdf</a></p>
+            <img src="images/nagarhole_tiger.jpg" class="location-img" alt="Nagarhole Safari Tiger" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:30 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Drive</span>
+            <h4>Nagarhole → Arasu Homestay</h4>
+            <p>Return drive as dusk sets. Watch for spotted deer grazing on the roadsides. The forest road becomes quiet and extremely peaceful.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
             <span class="meal-tag tag-dinner">Dinner</span>
-            <h4>Dinner at Homestay</h4>
-            <p>Return to Arasu Homestay for a quiet dinner and rest. Early bedtime recommended.</p>
+            <h4>Traditional Malnad Dinner at Homestay</h4>
+            <p>Relish hot local dishes around the dining area. Discuss the safari sightings and prepare your daypack for the early morning Kabini safari. Sleep early for the 5:30 AM start tomorrow.</p>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -1639,60 +1763,133 @@
     <div class="day-body">
       <div class="tldr">
         <h3>TL;DR</h3>
-        <p>The most dramatic drive of the trip. Through Mudumalai Tiger Reserve (wild elephant corridor), the legendary 36-hairpin ascent into the Nilgiris. Temperature drops 12°C through the cloud layer. Arrive Ooty by 2 PM. E-Pass checkpoint at Masinagudi — have QR code ready.</p>
+        <p>Start early with the booked Kabini morning safari. Head back to the homestay for breakfast and checkout by 10:30 AM. Embark on the most dramatic drive of the trip through Bandipur and Mudumalai reserves, ascending the legendary 36 hairpins of Masinagudi into the chilly heights of Ooty. E-Pass ready at Masinagudi.</p>
         <div class="tldr-pills">
+          <span class="tldr-pill pill-activity">🐅 Kabini Morning Safari: 6:30 - 9:30 AM</span>
           <span class="tldr-pill pill-drive">🚗 Nagarhole → Ooty: 130 km, ~4.5 hrs</span>
-          <span class="tldr-pill pill-activity">🐅 Mudumalai Wildlife Drive</span>
-          <span class="tldr-pill pill-activity">⛰ 36 Hairpin Bends Ascent</span>
+          <span class="tldr-pill pill-activity">⛰ 36 Hairpins Ascent</span>
           <span class="tldr-pill pill-stay">🏡 Snowdrops Ooty (Night 5)</span>
         </div>
       </div>
 
-      <div class="logistics-card">
-        <h3>Logistics & Navigation</h3>
+      <div class="logistics">
         <div class="logistics-item"><label>Route</label><span>Nagarhole → Gundlupet → Mudumalai → Masinagudi → Ooty</span></div>
-        <div class="logistics-item"><label>Permit</label><span>E-Pass Required — Show QR Code at Masinagudi</span></div>
-        <div class="logistics-item"><label>Speed</label><span>25 kmph strictly enforced in Mudumalai</span></div>
+        <div class="logistics-item"><label>Permit</label><span>E-Pass Required — Masinagudi Checkpoint</span></div>
         <div class="logistics-item"><label>Stay</label><span>Snowdrops Ooty (Night 5)</span></div>
+        <div class="logistics-item"><label>Temp</label><span>12–18°C in Ooty by evening</span></div>
       </div>
 
       <div class="section-divider"><span>Hour by Hour</span></div>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="time">08:00 AM</div>
-          <div class="event">
-            <h4>Check out of Arasu Homestay</h4>
-            <p>Breakfast and depart for Ooty. The route cuts through Bandipur and Mudumalai.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>5:30 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Early Departure</span>
+            <h4>Wake Up & Drive to Kabini Safari Gate</h4>
+            <p>Have a quick coffee/tea at the homestay. Drive to the Kabini Safari Gate, arriving by 6:15 AM sharp to board the morning safari vehicle.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">10:00 AM</div>
-          <div class="event">
-            <h4>Mudumalai Forest Drive</h4>
-            <p>Enter the tiger reserve. Strict speed limit, do not stop or step out of the vehicle. High probability of spotting elephants.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>6:30 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Kabini Morning Safari (6:30 AM - 9:30 AM)</h4>
+              <a href="https://maps.google.com/?q=Kabini+Safari+Gate+Nagarhole" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <span class="meal-tag tag-lunch" style="background:#EAF1E7; color:#2E7D32; border:1px solid #C0E0C0;">Booked Morning Slot</span>
+            <p>Ticket Number: <code class="pdf-link">SB20260515073525</code>. This morning drive through the park is when the forest is at its most beautiful, with mist rising from the Kabini reservoir. Highly active birdlife and high probability of sighting wild dog packs, herds of elephants, spotted deer, and potentially the big cats. Stored ticket: <a href="tickets-bookings/kabini_24may_ticket_SB20260515073525.pdf" target="_blank" class="offline-pdf-inline">kabini_24may_ticket_SB20260515073525.pdf</a></p>
+            <img src="images/nagarhole_safari.jpg" class="location-img" alt="Kabini Forest Safari" onerror="this.style.display='none'">
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">11:30 AM</div>
-          <div class="event">
-            <h4>Masinagudi Checkpost & Ascent</h4>
-            <p>Show the Nilgiris E-Pass here. Begin the 36-hairpin climb. Use lower gears continuously; avoid riding the brakes.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:45 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <h4>Hearty Breakfast at Homestay</h4>
+            <p>Return to Arasu Homestay for a delicious South Indian breakfast. Pack up your suitcases and load the car.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">02:00 PM</div>
-          <div class="event">
-            <h4>Arrive in Ooty & Check in to Snowdrops</h4>
-            <p>Check in to Snowdrops Ooty. The temperature will be notably cooler. Rest and acclimate.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>10:30 AM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <h4>Check out & Nagarhole → Gundlupet</h4>
+            <p>Checkout of Arasu Homestay. Drive out of the wildlife zone towards Gundlupet (~55 km, ~1 hr 15 mins). Roads are generally good with plantation and forest margins.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">04:30 PM</div>
-          <div class="event">
-            <h4>Doddabetta Peak or Ooty Lake</h4>
-            <p>Optional evening visit to Doddabetta Peak (highest in Nilgiris) or a relaxing boat ride on Ooty Lake.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>12:00 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-lunch">Lunch</span>
+            <h4>Highway Thali or Snacks in Gundlupet</h4>
+            <p>Brief stop in Gundlupet. Have a classic South Indian highway thali or grab some coffee and banana fritters at a local bakery before heading back into the reserve forests.</p>
           </div>
         </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:00 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Scenic Forest Drive</span>
+            <h4>Gundlupet → Bandipur → Mudumalai Forest Drive</h4>
+            <p>Enter the Bandipur and Mudumalai Tiger Reserve corridor. Speed limit is strictly 25-30 kmph, and stopping inside the forest is strictly prohibited. Keep your eyes peeled for wild elephants, spotted deer, and Indian gaur along the road margins. Make sure you cross the forest checkpoint within legal timings.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:30 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Masinagudi Checkpoint & Ooty E-Pass</h4>
+              <a href="https://maps.google.com/?q=Masinagudi+Checkpoint" target="_blank" class="map-btn">📍 Checkpoint</a>
+            </div>
+            <p>Present your pre-applied Nilgiris E-Pass QR code here (apply on May 23-24 at <a href="https://epass.tnega.org" target="_blank">epass.tnega.org</a>). Pay the ₹300-400 green tax in cash (keep small change handy as UPI and cards rarely work here).</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>3:00 PM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Climb</span>
+            <h4>The Legendary 36-Hairpin Ascent to Ooty</h4>
+            <p>Drive up the steep Masinagudi-Ooty ghat road. The switchbacks are incredibly sharp. Drive in low gears (1st and 2nd), keep honking at blind corners, and give oncoming vehicles the right of way. As you ascend, the temperature drops dramatically and pine woods replace the dense jungle.</p>
+            <img src="images/36_hairpins.jpg" class="location-img" alt="Masinagudi 36 Hairpins" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:30 PM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <h4>Arrive in Ooty & Check in to Snowdrops</h4>
+              <a href="https://maps.google.com/?q=Snowdrops+Ooty" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Booking.com Stay confirmation. Check in to Snowdrops Ooty, unpack, and put on your warm light fleece as the temperature here is noticeably cool. Relax and watch the mist roll over the valleys from the property. Confirmation screenshot: <a href="tickets-bookings/WhatsApp%20Image%202026-05-12%20at%2011.52.07%20PM.jpeg" target="_blank" class="offline-pdf-inline">WhatsApp Image 2026-05-12 at 11.52.07 PM.jpeg</a></p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-dinner">Dinner</span>
+            <h4>Earl's Secret or Sidewalk Cafe</h4>
+            <p>Head to Earl's Secret for colonial-era dining in a glasshouse, or Sidewalk Cafe for wood-fired pizzas in a warm, cozy setting. Enjoy a hot dessert before heading back to Snowdrops Ooty for a peaceful night's sleep.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1703,66 +1900,140 @@
       <div class="day-hero-bg" style="background-image: url('images/ooty_landscape.jpg'); background-color:#1A2E14;"></div>
       <div class="day-hero-content">
         <div class="day-badge">Day 6 · Monday, May 25</div>
-        <h2>Ooty — Rose Garden & Botanical Gardens <span>/ Ooty Full Day 1</span></h2>
+        <h2>Ooty — Elephant Camp & Beautiful Gardens <span>/ Excursion Down the Ghats</span></h2>
       </div>
     </div>
     <div class="day-body">
       <div class="tldr">
         <h3>TL;DR</h3>
-        <p>Full day in Ooty. Morning at the 160-year-old Government Botanical Gardens (650 plant species). Ooty Rose Garden with 20,000 rose varieties in bloom. Afternoon tea estate visit. Sunset overlooking the Nilgiri valleys. Dinner at a local cafe.</p>
+        <p>Wake up early for a spectacular downhill mountain drive to Mudumalai's Theppakadu Elephant Camp. Attend the booked morning feeding/bathing session with the camp's massive elephants. Drive back up the 36 hairpins, spend the afternoon exploring Ooty's historic Government Botanical Gardens and the vibrant Rose Garden. Sunset overlooking Nilgiri valley views.</p>
         <div class="tldr-pills">
-          <span class="tldr-pill pill-activity">🌺 Rose Garden (20,000 Varieties)</span>
+          <span class="tldr-pill pill-activity">🐘 Theppakadu Elephant Camp: 8:30 AM</span>
+          <span class="tldr-pill pill-drive">🚗 Hill Excursion Down/Up 36 Hairpins</span>
           <span class="tldr-pill pill-activity">🌿 Botanical Gardens (1847)</span>
-          <span class="tldr-pill pill-food">🍵 Tea Tasting & Tour</span>
-          <span class="tldr-pill pill-stay">🏡 Snowdrops Ooty (Night 6)</span>
+          <span class="tldr-pill pill-activity">🌹 Rose Garden (20,000 Varieties)</span>
         </div>
       </div>
 
-      <div class="logistics-card">
-        <h3>Logistics & Navigation</h3>
-        <div class="logistics-item"><label>Total Drive</label><span>Local day in Ooty</span></div>
+      <div class="logistics">
+        <div class="logistics-item"><label>Total Drive</label><span>~70 km (Ghat roads)</span></div>
         <div class="logistics-item"><label>Stay</label><span>Snowdrops Ooty (Night 6)</span></div>
-        <div class="logistics-item"><label>Weather</label><span>14–22°C — Carry a Light Fleece All Day</span></div>
+        <div class="logistics-item"><label>Excursion</label><span>Ooty &rarr; Masinagudi &rarr; Theppakadu &rarr; Ooty</span></div>
+        <div class="logistics-item"><label>Temp</label><span>14–22°C (Light jacket needed)</span></div>
       </div>
 
       <div class="section-divider"><span>Hour by Hour</span></div>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="time">09:00 AM</div>
-          <div class="event">
-            <h4>Botanical Gardens</h4>
-            <p>Arrive early to beat the crowds. Explore the sprawling 55-acre gardens established in 1847.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Downhill Drive</span>
+            <h4>Ooty → Theppakadu via 36 Hairpins (~1 hr 15 mins)</h4>
+            <p>Leave Ooty early. Take the downhill drive back down the 36 hairpins towards Masinagudi and Theppakadu. The morning mountain mist is thick, and the crisp forest air is incredible. Keep in 1st/2nd gear to save brakes, honk at corners, and go slow.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">11:30 AM</div>
-          <div class="event">
-            <h4>Rose Garden</h4>
-            <p>Visit the Government Rose Garden, home to one of the largest collections of roses in India.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:15 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Arrive at Theppakadu Elephant Camp</h4>
+              <a href="https://maps.google.com/?q=Theppakadu+Elephant+Camp" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Park your car at the Mudumalai forest office parking lot. Present your pre-booked ticket at the entry window. One of the oldest elephant camps in Asia (established 1910), located on the banks of the Moyar River.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">01:30 PM</div>
-          <div class="event">
+
+        <div class="tl-item">
+          <div class="tl-time"><span>8:30 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Elephant Feeding & Bathing Session</h4>
+              <a href="https://maps.google.com/?q=Theppakadu+Elephant+Camp" target="_blank" class="map-btn">📍 Camp</a>
+            </div>
+            <span class="meal-tag tag-lunch" style="background:#FFF3E0; color:#E65100; border:1px solid #F5E6C0;">Booked Slot: 8:30 AM - 9:00 AM</span>
+            <p>Ticket Code: <code class="pdf-link">#30863</code>. Watch the mahouts feed the colossal Asian elephants massive prepared rice and ragi balls with nutrients. Some elephants are retired forest workers, others were rescued. Observe their incredible bonds and intelligence as they communicate through soft rumbles and trunk taps. Ticket PDF: <a href="tickets-bookings/Theppakadu%20Elephant%20tickets.pdf" target="_blank" class="offline-pdf-inline">Theppakadu Elephant tickets.pdf</a></p>
+            <img src="images/theppakadu_elephants.jpg" class="location-img" alt="Theppakadu Elephant Camp" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>9:15 AM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
+            <span class="meal-tag tag-breakfast">Breakfast</span>
+            <h4>Hearty Forest Breakfast in Masinagudi</h4>
+            <p>Drive to a local eatery in Masinagudi town. Enjoy piping hot idlis, crispy vadas, dosas, and strong filter coffee. Rest before beginning the steep climb back to the mountains.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>10:00 AM</span></div>
+          <div class="tl-dot drive"></div>
+          <div class="tl-card drive-card">
+            <span class="meal-tag tag-drive">Uphill Drive</span>
+            <h4>Masinagudi → Ooty Ascent (~1 hr 15 mins)</h4>
+            <p>Ascend the 36 hairpins back to Ooty. Keep the engine in low gears and maintain a steady, safe speed. Feel the air get crisper and colder with every 100 meters climbed.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>11:30 AM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Government Botanical Garden, Ooty</h4>
+              <a href="https://maps.google.com/?q=Government+Botanical+Garden+Ooty" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Established in 1847. Spans 55 rolling acres on the slopes of Doddabetta peak. Walk through the Italian gardens, the glasshouse, and see the unassuming 20-million-year-old fossilized tree trunk. Marvel at the ancient tree ferns and beautiful landscaped green lawns.</p>
+            <img src="images/ooty_botanical.jpg" class="location-img" alt="Ooty Botanical Gardens" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>1:30 PM</span></div>
+          <div class="tl-dot meal"></div>
+          <div class="tl-card meal-card">
             <span class="meal-tag tag-lunch">Lunch</span>
             <h4>Lunch at Sidewalk Cafe or Earl's Secret</h4>
-            <p>Enjoy a cozy lunch in town.</p>
+            <p>Indulge in a relaxing hot lunch at a local Ooty café to warm up from the mountain air.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">03:00 PM</div>
-          <div class="event">
-            <h4>Tea Museum / Factory Visit</h4>
-            <p>Learn about Nilgiri tea processing and enjoy a fresh tasting session.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>2:45 PM</span></div>
+          <div class="tl-dot major"></div>
+          <div class="tl-card major-card">
+            <div class="tl-card-header">
+              <h4>Ooty Government Rose Garden</h4>
+              <a href="https://maps.google.com/?q=Government+Rose+Garden+Ooty" target="_blank" class="map-btn">📍 Maps</a>
+            </div>
+            <p>Located on the slopes of Elk Hill, this 10-acre garden features over 20,000 varieties of roses. Walk through the beautifully terraced beds of vibrant colors and enjoy spectacular panoramic views over the entire town.</p>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="time">06:00 PM</div>
-          <div class="event">
-            <h4>Return to Snowdrops Ooty</h4>
-            <p>Relax at the hotel for the evening.</p>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>4:30 PM</span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h4>Doddabetta Peak or Ooty Lake Sunset</h4>
+            <p>Optional evening visit: drive up to Doddabetta Peak (2,637m, the highest in the Nilgiris) for breathtaking views, or enjoy a peaceful boat ride on Ooty Lake as the sun sets.</p>
           </div>
         </div>
+
+        <div class="tl-item">
+          <div class="tl-time"><span>7:00 PM</span></div>
+          <div class="tl-dot stay"></div>
+          <div class="tl-card">
+            <h4>Return to Snowdrops Ooty & Rest</h4>
+            <p>Spend a relaxing evening at Snowdrops Ooty. Have a hot dinner and sleep cozy under the blankets.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2082,7 +2353,7 @@
 
       <div style="margin-top:40px; padding:28px 32px; background:var(--dark); border-radius:12px; color:#fff;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; margin-bottom:8px; line-height:1.3;">The Circuit: Complete.</div>
-        <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.8;">Kerala coast → Coorg coffee highlands → Mysuru's royal corridors → Nilgiri cloud forest. One car, one arc, no backtracking. The same Kaveri river you first saw at its sacred source on Brahmagiri Hill in Coorg — you watched its water fill the KRS reservoir at Brindavan Gardens in Mysuru. Eight days, three districts, three Indian states.</p>
+        <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.8;">Kerala coast → Coorg coffee highlands → Nagarhole backwaters → Nilgiri cloud forest. One car, one arc, no backtracking. The same Kaveri river you first saw at its sacred source on Brahmagiri Hill in Coorg — you watched its water form the Kabini reservoir in Nagarhole. Eight days, three districts, three Indian states.</p>
       </div>
 
     </div>
