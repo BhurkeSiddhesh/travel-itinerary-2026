@@ -926,7 +926,110 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
   }
+
+  /* Surprise Card Styling */
+  .surprise-card {
+    cursor: pointer;
+    background: #FFF9F9;
+    border: 1px dashed #E74C3C !important;
+    border-left: 4px solid #E74C3C !important;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    max-height: 105px; /* Collapsed max-height */
+    position: relative;
+  }
+
+  .surprise-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.12);
+    border-color: #C0392B !important;
+  }
+
+  .surprise-collapsed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  .surprise-duck-large {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 6px;
+    transition: transform 0.3s ease;
+  }
+
+  .surprise-card:hover .surprise-duck-large {
+    transform: scale(1.15) rotate(5deg);
+  }
+
+  .surprise-hint {
+    font-size: 11px;
+    font-weight: 600;
+    color: #E74C3C;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .surprise-expanded {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .surprise-card.revealed {
+    max-height: 500px;
+    background: #FFF;
+    border-style: solid !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .surprise-card.revealed .surprise-collapsed {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: none;
+  }
+
+  .surprise-card.revealed .surprise-expanded {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding: 4px 0 0 0;
+  }
+
+  .tl-dot.surprise {
+    border-color: #E74C3C;
+    background: #FFF;
+    animation: surprisePulse 2s infinite;
+  }
+
+  @keyframes surprisePulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+  }
+
+  .lottie-sticker {
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+  }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script src="stickers/heart.js"></script>
+<script src="stickers/thumbsup.js"></script>
+<script src="stickers/wave.js"></script>
+<script src="stickers/party.js"></script>
+<script src="stickers/watching.js"></script>
+<script src="stickers/sobbing.js"></script>
 </head>
 <body>
 
@@ -1098,7 +1201,7 @@
           </div>
           <div class="check-item">
             <input type="checkbox" id="c_car" checked>
-            <label for="c_car"><strong>EVM Car Rental</strong><span>Datsun Redi GO AT. Pick up May 20 (Kannur), Drop off May 27 (Coimbatore). Booking: <code class="pdf-link">48634</code>. Stored: <a href="tickets-bookings/48634.pdf" target="_blank" class="offline-pdf">48634.pdf</a></span></label>
+            <label for="c_car"><strong>EVM Car Rental <div class="lottie-sticker" data-sticker="thumbsup" style="width:20px;height:20px;"></div></strong><span>Datsun Redi GO AT. Pick up May 20 (Kannur), Drop off May 27 (Coimbatore). Booking: <code class="pdf-link">48634</code>. Stored: <a href="tickets-bookings/48634.pdf" target="_blank" class="offline-pdf">48634.pdf</a></span></label>
           </div>
           <div class="check-item">
             <input type="checkbox" id="c9">
@@ -1110,7 +1213,7 @@
           </div>
           <div class="check-item">
             <input type="checkbox" id="c11">
-            <label for="c11"><strong>Evolve Back Coorg — Dinner Reservation</strong><span>May 21 (Day 2). Call ahead: <strong>+91 820 225 7900</strong>. Open-air plantation dining. Coorg Heritage menu. Request valley-view table.</span></label>
+            <label for="c11"><strong>The Tamara Coorg — Dinner Reservation <div class="lottie-sticker" data-sticker="heart" style="width:20px;height:20px;"></div></strong><span>May 21 (Day 2). Call ahead: <strong>+91 80 7107 7700</strong>. Unique dining experience suspended over a valley with views of a waterfall. Kodava specialties. Stored booking: <a href="tickets-bookings/COORG Stay.pdf" target="_blank" class="offline-pdf">COORG Stay.pdf</a></span></label>
           </div>
         </div>
       </div>
@@ -1218,7 +1321,7 @@
           <div class="tl-dot major"></div>
           <div class="tl-card major-card">
             <div class="tl-card-header">
-              <h4>Land Kannur — EVM Pickup</h4>
+              <h4>Land Kannur — EVM Pickup <div class="lottie-sticker" data-sticker="wave" style="width:28px;height:28px;"></div></h4>
               <a href="https://maps.google.com/?q=11.9189,75.5492" target="_blank" class="map-btn">📍 Maps</a>
             </div>
             <p>Clear baggage, meet EVM. Full car inspection with photos (front, back, sides, inside). Sort paperwork (~45 min). Get breakdown number. Confirm Coimbatore drop-off location in writing before leaving.</p>
@@ -1334,13 +1437,13 @@
     <div class="day-body">
       <div class="tldr">
         <h3>TL;DR</h3>
-        <p>Abbey Falls at golden hour, then drive to the magnificent Namdroling Buddhist Monastery at Bylakuppe — the largest Tibetan temple complex outside Tibet. Afternoon coffee estate walk. Temple visit at sunset. Candlelit dinner at Evolve Back Coorg's plantation dining room.</p>
+        <p>Abbey Falls at golden hour, then drive to the magnificent Namdroling Buddhist Monastery at Bylakuppe — the largest Tibetan temple complex outside Tibet. Afternoon coffee estate walk. Temple visit at sunset. Romantic surprise dinner at The Tamara Coorg.</p>
         <div class="tldr-pills">
           <span class="tldr-pill pill-activity">🌊 Abbey Falls</span>
           <span class="tldr-pill pill-activity">🏯 Namdroling Golden Temple</span>
           <span class="tldr-pill pill-food">🍵 Tibetan Momos for Lunch</span>
           <span class="tldr-pill pill-food">🌿 Coffee Estate Walk</span>
-          <span class="tldr-pill pill-stay">🍽 Evolve Back Dinner</span>
+          <span class="tldr-pill pill-stay">🍽 The Tamara Coorg Dinner <div class="lottie-sticker" data-sticker="heart" style="width:20px;height:20px;"></div></span>
         </div>
       </div>
 
@@ -1466,15 +1569,43 @@
         </div>
 
         <div class="tl-item">
-          <div class="tl-time"><span>8:00 PM</span></div>
-          <div class="tl-dot meal"></div>
-          <div class="tl-card date-card">
-            <span class="meal-tag tag-dinner">Dinner</span>
-            <div class="tl-card-header">
-              <h4>Evolve Back Coorg (Orange County) — Open Air Plantation Dining</h4>
-              <a href="https://maps.google.com/?q=Evolve+Back+Coorg+Orange+County+Resort" target="_blank" class="map-btn">📍 Maps</a>
+          <div class="tl-time"><span>7:30 PM</span></div>
+          <div class="tl-dot surprise"></div>
+          <div class="tl-card surprise-card" onclick="toggleSurprise(this)">
+            <!-- Collapsed State -->
+            <div class="surprise-collapsed">
+              <div class="lottie-sticker surprise-duck-large" data-sticker="heart" style="width:58px; height:58px; margin-bottom:6px;"></div>
+              <div class="surprise-hint">Tap tonight's plans for a surprise... 🤫</div>
             </div>
-            <p>The finest dining experience in Coorg. Open-air pavilion dining by candlelight, set against the coffee plantation. <strong>Coorg Heritage Menu</strong> — Pandi Curry, Koli Curry (Coorg chicken), Estate Fish, Akki Roti. Seasonal cocktails. Live Carnatic music on select nights. Request a valley-view table when booking. <strong>Reservation required: +91 820 225 7900.</strong></p>
+            <!-- Expanded State -->
+            <div class="surprise-expanded">
+              <span class="meal-tag tag-dinner" style="background:#E74C3C; color:#fff; font-weight:600; padding:2px 8px; border-radius:10px;">💖 Surprise Date</span>
+              <div class="tl-card-header" style="margin-top: 8px;">
+                <h4 style="font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:#C0392B;">Surprise! We have a date at The Tamara Coorg! 🍽️✨</h4>
+                <a href="https://maps.google.com/?q=The+Tamara+Coorg" target="_blank" class="map-btn" onclick="event.stopPropagation();" style="background:#E74C3C; color:#fff; border-color:#E74C3C; font-size:11px; padding:4px 10px; border-radius:6px; font-weight:600; text-decoration:none;">📍 Maps</a>
+              </div>
+              <p style="margin-top:8px; line-height:1.6; font-size:13px; color:#5D6D7E;">We're heading to the breathtaking <strong>The Falls at The Tamara Coorg</strong>! Suspended on a bridge over a deep valley with a crystal-clear glass floor, you'll dine right above a gushing waterfall, surrounded by lush rainforests. A truly magical candlelit culinary experience featuring authentic Kodava specialties.</p>
+              
+              <div class="surprise-meta" style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:11px;">
+                <div style="background:#FFF3F3; padding:8px; border-radius:6px; border:1px solid #FADBD8; text-align:left;">
+                  <strong style="color:#78281F;">📞 Call / Reservation</strong><br>
+                  <span style="color:#C0392B; font-weight:600;">+91 80 7107 7700</span>
+                </div>
+                <div style="background:#FFF3F3; padding:8px; border-radius:6px; border:1px solid #FADBD8; text-align:left;">
+                  <strong style="color:#78281F;">👔 Dress Code</strong><br>
+                  <span style="color:#C0392B; font-weight:600;">Smart Casual / Elegant</span>
+                </div>
+              </div>
+              
+              <div class="surprise-pdf-section" style="margin-top:12px; padding:10px; background:#F8F9F9; border-radius:6px; border:1px solid #E5E7E9; display:flex; align-items:center; justify-content:space-between; width:100%; box-sizing:border-box;">
+                <span style="font-size:12px; color:#2C3E50;">📁 Stored Booking: <strong>COORG Stay.pdf</strong></span>
+                <a href="tickets-bookings/COORG Stay.pdf" target="_blank" class="offline-pdf" onclick="event.stopPropagation();" style="font-size:11px; padding:4px 10px; background:var(--forest); color:#fff; border-radius:4px; text-decoration:none; font-weight:600; margin-left:auto;">Open PDF</a>
+              </div>
+              
+              <div style="text-align:right; margin-top:8px;">
+                <div class="lottie-sticker surprise-duck-small" data-sticker="heart" style="width:32px; height:32px; vertical-align:middle;"></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2373,11 +2504,40 @@ function show(id) {
   if (window.innerWidth <= 1024) {
     document.querySelector('.sidebar').classList.remove('open');
   }
+
+  // Trigger layout refresh for Lottie vector sizing
+  setTimeout(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, 50);
 }
 
 function toggleMenu() {
   document.querySelector('.sidebar').classList.toggle('open');
 }
+
+function toggleSurprise(card) {
+  card.classList.toggle('revealed');
+  // Trigger Lottie refresh on reveal
+  setTimeout(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, 100);
+}
+
+// Global Lottie Stickers Initialization
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lottie-sticker').forEach(el => {
+    const name = el.getAttribute('data-sticker');
+    if (window.lottieStickers && window.lottieStickers[name]) {
+      lottie.loadAnimation({
+        container: el,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: window.lottieStickers[name]
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
