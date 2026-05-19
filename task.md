@@ -7,7 +7,7 @@
 - [x] Verify the visual appeal and interactions via browser subagent. <!-- id: 24 -->
 - [x] Scale all Lottie duck stickers to a larger, more prominent size. <!-- id: 25 -->
 - [x] Integrate time-lock to ensure the 7:30 PM Tamara dinner event only unlocks at or after 5:30 PM on May 21, 2026. <!-- id: 26 -->
-- [x] Hide the "Tamara Coorg" text mentions in the Day 2 TL;DR, pills, and pre-trip checklist to fully preserve the dinner surprise. <!-- id: 27 -->
+- [x] Completely delete the dinner reservation check item from the pre-trip checklist to preserve the candlelight dinner surprise 100%. <!-- id: 27 -->
 - [x] Personalize the cover page subtitle to read 'A Trip with My Love — Duckkuu 💖'. <!-- id: 28 -->
 
 ## History
