@@ -1,11 +1,10 @@
 # task.md — Task Ledger
 
-## Active Task: WhatsApp Sticker Pack Integration (Completed)
-- [x] Browse the WhatsApp sticker pack URL and inspect sticker resources. <!-- id: 16 -->
-- [x] Download and save all stickers in the repository. <!-- id: 17 -->
-- [x] Convert the stickers to offline-compatible JavaScript vector Lottie format. <!-- id: 18 -->
-- [x] Integrate animations beautifully in the timeline checklist, TL;DR, and surprise date card. <!-- id: 19 -->
-- [x] Add the peace duck (duck with worm) Lottie animation next to the cover page title. <!-- id: 20 -->
+## Active Task: Duck Sticker Enrichment & Tamara Surprise GIF Integration (Completed)
+- [x] Replace the Tamara surprise card collapsed state with the animated stepping duck GIF. <!-- id: 21 -->
+- [x] Centering the stepping duck GIF in the collapsed card with zero text or black boxes. <!-- id: 22 -->
+- [x] Add multiple cute Lottie duck stickers (e.g. party, peace, watching, heart, shock, wave) on every itinerary page. <!-- id: 23 -->
+- [x] Verify the visual appeal and interactions via browser subagent. <!-- id: 24 -->
 
 ## History
 - **2026-05-19**: Unpacked the premium animated WhatsApp sticker ZIPs from `Downloads/stickers_new`, converted them to local `.js` files to bypass browser CORS constraints, loaded Lottie-web library, and integrated stunning inline animated stickers (`wave`, `heart`, `thumbsup`) throughout the itinerary, including the pulsing expandable Tamara Coorg surprise date card and the prominent duck-with-worm "peace" Lottie animation flanking the front page title.
