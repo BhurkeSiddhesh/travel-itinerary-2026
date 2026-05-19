@@ -21,6 +21,7 @@
 - Maintaining the premium "Travel Guide" feel across desktop and mobile devices.
 
 ## Change Log
+- **2026-05-19**: Removed any giveaway mention of "The Tamara Coorg" from the Day 2 TL;DR text and stay pill to ensure the romantic dinner remains a complete mystery until unlocked. Left the gorgeous `heart` duck sticker inside the stay pill fully active.
 - **2026-05-19**: Replaced the collapsed state stepping duck GIF inside the 7:30 PM Day 2 Tamara Coorg surprise card with the premium animated Lottie vector duck `hm` (thinking/curious duck) directly from the `Downloads/stickers_new` pack, scaled to a prominent `100px × 100px` size.
 - **2026-05-19**: Scaled up all Lottie duck vector stickers across the entire guide by 33% to make them significantly more prominent, accessible, and visually engaging. Integrated a dynamic client-side JavaScript time-lock on the Day 2 (7:30 PM) Tamara Coorg surprise candlelight dinner card to ensure it only unlocks on or after May 21, 2026 at 5:30 PM local time. If clicked prior, a gorgeous custom forest-gold glassmorphism Toast notification alerts the user that it remains a locked surprise.
 - **2026-05-19**: Enriched the entire guide by beautifully distributing multiple interactive duck Lottie stickers (`heart`, `watching`, `party`, `thumbsup`, `peace`, `eyeroll`, `shock`, `hm`, `sobbing`) across all 10 pages (`cover`, `checklist`, `day1` to `day8`) inside major timeline entry cards, page headers, and summary sections.

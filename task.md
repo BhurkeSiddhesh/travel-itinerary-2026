@@ -7,6 +7,7 @@
 - [x] Verify the visual appeal and interactions via browser subagent. <!-- id: 24 -->
 - [x] Scale all Lottie duck stickers to a larger, more prominent size. <!-- id: 25 -->
 - [x] Integrate time-lock to ensure the 7:30 PM Tamara dinner event only unlocks at or after 5:30 PM on May 21, 2026. <!-- id: 26 -->
+- [x] Hide the "Tamara Coorg" text mentions in the Day 2 TL;DR and pills to fully preserve the dinner surprise. <!-- id: 27 -->
 
 ## History
 - **2026-05-19**: Unpacked the premium animated WhatsApp sticker ZIPs from `Downloads/stickers_new`, converted them to local `.js` files to bypass browser CORS constraints, loaded Lottie-web library, and integrated stunning inline animated stickers (`wave`, `heart`, `thumbsup`) throughout the itinerary, including the pulsing expandable Tamara Coorg surprise date card and the prominent duck-with-worm "peace" Lottie animation flanking the front page title.
