@@ -21,7 +21,7 @@
 - Maintaining the premium "Travel Guide" feel across desktop and mobile devices.
 
 ## Change Log
-- **2026-05-19**: Unpacked the animated WhatsApp sticker pack from `Downloads/stickers_new`, converted Lottie JSON assets into inline/local JavaScript sticker scripts to avoid CORS issues for offline viewing, loaded the high-performance Lottie-web engine, and added cute interactive sticker animations (`wave`, `heart`, `thumbsup`) to key trip points, including the custom-styled pulsing surprise date card for The Tamara Coorg.
+- **2026-05-19**: Unpacked the animated WhatsApp sticker pack from `Downloads/stickers_new`, converted Lottie JSON assets into inline/local JavaScript sticker scripts to avoid CORS issues for offline viewing, loaded the high-performance Lottie-web engine, and added cute interactive sticker animations (`wave`, `heart`, `thumbsup`, `peace`) to key trip points, including the custom-styled pulsing surprise date card for The Tamara Coorg and the prominent duck-with-worm mascot flanking the front page title.
 - **2026-05-18**: Integrated actual bookings and PDFs, removed Mysuru in favor of Nagarhole Safari, added Kabini and Theppakadu Elephant Camp tickets, fixed duplicate Booking.com code for Ooty Stay, and added direct links for offline viewing.
 - **2026-05-10**: Implemented full mobile responsiveness for iPhone XR and above, including a fixed mobile header, hamburger menu, and responsive grid layouts.
 - **2026-05-04**: Added 9 high-quality location images and enhanced CSS with premium hover effects and shadows.
